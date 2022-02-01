@@ -14,7 +14,7 @@ export class ComponentsService {
   );
   
   constructor(
-    private httpClient: HttpClient
+    // private httpClient: HttpClient
   ) {
     
   }
@@ -40,10 +40,10 @@ export class ComponentsService {
         
       }
     ];
-    this.httpClient.get<IResponse<IComponent[]>>('/components/').subscribe(
-      data => {
-        return data.data;
-      }
-    )
+    // this.httpClient.get<IResponse<IComponent[]>>('/components/').subscribe(
+    //   data => {
+    //     return data.data;
+    //   }
+    // )
   }
 }
