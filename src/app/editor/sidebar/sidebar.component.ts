@@ -11,17 +11,12 @@ export class SidebarComponent implements OnInit {
 
   components: IComponent[] = [];
 
-  componentService: ComponentsService;
-
   constructor(
     private component: ComponentsService,
   ) {
-    this.componentService = component;
+    this.components = this.component.getComponents();
   }
 
   ngOnInit(): void {
-  }
-  ngAfterViewInit() : void {
-    this.components = this.componentService.getComponents();
   }
 }

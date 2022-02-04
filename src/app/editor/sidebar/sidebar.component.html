@@ -1,4 +1,7 @@
-<p>sideBar</p>
-<div *ngFor="let component of components">
-    <draw-context [component]="component"></draw-context>
+<p class="title">Components</p>
+<div *ngFor="let component of components" class="component">
+    <p class="title">{{component.title}}</p>
+    <div class="drawing">
+        <draw-context [component]="component"></draw-context>
+    </div>
 </div>

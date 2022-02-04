@@ -1,0 +1,26 @@
+.components {
+    margin: 0 auto;
+    padding: 0;
+}
+.title {
+    font-weight: bold;
+}
+
+.component {
+    margin: 0.5em;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding-bottom: 0.5em;
+    
+    .title {
+        font-weight:normal;
+        padding: 0.5em;
+    }
+    
+    .drawing {
+        width: 70%;
+        height: 6em;
+        margin: 15% auto;
+    }
+}
