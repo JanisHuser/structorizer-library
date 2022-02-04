@@ -1,10 +1,9 @@
-<svg #drawing>
+
+<div class="drawing">
     <draw-rectangle
-        *ngFor="let rect of rectangles"
-        [x]="rect.x"
-        [y]="rect.y"
-        [width]="rect.width"
-        [height]="rect.height"
+    *ngFor="let rect of rectangles"
+    [rect]="rect"
     ></draw-rectangle>
-</svg>
+</div>
+
 <div #context></div>

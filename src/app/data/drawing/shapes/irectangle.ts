@@ -6,4 +6,6 @@ export interface IRectangle extends IShape{
     y: number | string;
     width: number | string; 
     height: number | string;
+    rx?: number | string;
+    ry?: number | string;
 }

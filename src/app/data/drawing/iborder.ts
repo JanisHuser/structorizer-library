@@ -1,4 +1,7 @@
+import { BorderStyle } from "./border-style";
+
 export interface IBorder {
     color: string;
-    width: number[] | number;
+    width: string | string[];
+    style: BorderStyle;
 }

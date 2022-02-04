@@ -1,8 +1,18 @@
-<rect
-x="x"
-y="y"
-width="width"
-height="height"
-rx="rx"
-ry="ry">
-</rect>
+<div
+    [style.width]="rect.width"
+    [style.height]="rect.height"
+    [style.left]="rect.x"
+    [style.top]="rect.y"
+    [style.border-radius]="[rect.rx,rect.ry,rect.rx,rect.ry]"
+    [style.backgroundColor]="rect.color"
+    [ngStyle]="
+    {
+        'border-color': (rect.border != undefined && rect.border.color != undefined) ? rect.border.color : 'transparent',
+        'border-width': rect.border != undefined ? rect.border.width : '1px',
+        'border-style': rect.border != undefined ? toEnumStyle(rect.border.style) : 'none'
+    }"
+    class="rectangle"
+>
+<div class="child-container" *ngIf="rect.acceptsChildren"></div>
+
+</div>
