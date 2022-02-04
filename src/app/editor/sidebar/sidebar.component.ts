@@ -1,13 +1,13 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { IComponent } from '../data/icomponent';
-import { ComponentsService } from '../services/Components/components.service';
+import { Component, OnInit } from '@angular/core';
+import { IComponent } from 'src/app/data/icomponent';
+import { ComponentsService } from 'src/app/services/Components/components.service';
 
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss']
 })
-export class SidebarComponent implements OnInit,AfterViewInit {
+export class SidebarComponent implements OnInit {
 
   components: IComponent[] = [];
 
@@ -24,5 +24,4 @@ export class SidebarComponent implements OnInit,AfterViewInit {
   ngAfterViewInit() : void {
     this.components = this.componentService.getComponents();
   }
-
 }
