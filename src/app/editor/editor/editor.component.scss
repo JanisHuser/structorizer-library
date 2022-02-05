@@ -1,15 +1,17 @@
 .editor {
     padding: 0;
-    display: grid;
-    grid-template-columns: 16em auto;
-    height: 100%;
+    height:calc(100vh - 9em);
     .sidebar {
-        grid-column:1;
-        height: 100%;
-        
+        display: inline-block;
+        width: 16em;
+        height: calc(100vh - 11em);
     }
 
     .playfield {
-        grid-column: 2;
+        display: inline-block;
+        width: calc(100vw - 16em);
+        height: calc(100vh - 10em);
+        vertical-align: top;
+        height: 100%;
     }
 }

@@ -76,6 +76,104 @@ export class ComponentsService {
         drawing: [
           
         ]
+      },
+      {
+        title: {
+          en: "Do-While Loop",
+          de: "Do-While Loop"
+        },
+        description: {
+          en:"Beschreibung",
+          de:"Beschreibung"
+        },
+        acceptsChildren: true,
+        drawing: [
+          
+        ]
+      },
+      {
+        title: {
+          en: "Do-While Loop",
+          de: "Do-While Loop"
+        },
+        description: {
+          en:"Beschreibung",
+          de:"Beschreibung"
+        },
+        acceptsChildren: true,
+        drawing: [
+          
+        ]
+      },
+      {
+        title: {
+          en: "Do-While Loop",
+          de: "Do-While Loop"
+        },
+        description: {
+          en:"Beschreibung",
+          de:"Beschreibung"
+        },
+        acceptsChildren: true,
+        drawing: [
+          
+        ]
+      },
+      {
+        title: {
+          en: "Do-While Loop",
+          de: "Do-While Loop"
+        },
+        description: {
+          en:"Beschreibung",
+          de:"Beschreibung"
+        },
+        acceptsChildren: true,
+        drawing: [
+          
+        ]
+      },
+      {
+        title: {
+          en: "Do-While Loop",
+          de: "Do-While Loop"
+        },
+        description: {
+          en:"Beschreibung",
+          de:"Beschreibung"
+        },
+        acceptsChildren: true,
+        drawing: [
+          
+        ]
+      },
+      {
+        title: {
+          en: "Do-While Loop",
+          de: "Do-While Loop"
+        },
+        description: {
+          en:"Beschreibung",
+          de:"Beschreibung"
+        },
+        acceptsChildren: true,
+        drawing: [
+          
+        ]
+      },
+      {
+        title: {
+          en: "Do-While Loop",
+          de: "Do-While Loop"
+        },
+        description: {
+          en:"Beschreibung",
+          de:"Beschreibung"
+        },
+        acceptsChildren: true,
+        drawing: [
+          
+        ]
       }
     ];
     // this.httpClient.get<IResponse<IComponent[]>>('/components/').subscribe(

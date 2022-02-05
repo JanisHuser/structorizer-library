@@ -10,7 +10,7 @@ export class LanguageService {
   selectedLanguage: Language = Language.en;
   constructor() {
     var userLang = navigator.language; 
-    alert(userLang);
+    // alert(userLang);
   }
 
   get(text: ILanguage) : string {
