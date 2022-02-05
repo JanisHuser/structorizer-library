@@ -24,8 +24,14 @@ export class ComponentsService {
 
     return [
       {
-        title: "While Schleife",
-        "description": "description",
+        title: {
+          en: "While loop",
+          de: "While Schleife"
+        },
+        description: {
+          de: "Beschreibung",
+          en: "Description"
+        },
         acceptsChildren: true,
         drawing: [
           {
@@ -56,7 +62,20 @@ export class ComponentsService {
             }
           }
         ]
-        
+      },
+      {
+        title: {
+          en: "Do-While Loop",
+          de: "Do-While Loop"
+        },
+        description: {
+          en:"Beschreibung",
+          de:"Beschreibung"
+        },
+        acceptsChildren: true,
+        drawing: [
+          
+        ]
       }
     ];
     // this.httpClient.get<IResponse<IComponent[]>>('/components/').subscribe(

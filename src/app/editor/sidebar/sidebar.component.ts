@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IComponent } from 'src/app/data/icomponent';
 import { ComponentsService } from 'src/app/services/Components/components.service';
+import { LanguageService } from 'src/app/services/language/language.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -13,6 +14,7 @@ export class SidebarComponent implements OnInit {
 
   constructor(
     private component: ComponentsService,
+    public language: LanguageService,
   ) {
     this.components = this.component.getComponents();
   }
