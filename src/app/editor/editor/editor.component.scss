@@ -1,0 +1,15 @@
+.editor {
+    padding: 0;
+    display: grid;
+    grid-template-columns: 16em auto;
+    height: 100%;
+    .sidebar {
+        grid-column:1;
+        height: 100%;
+        
+    }
+
+    .playfield {
+        grid-column: 2;
+    }
+}

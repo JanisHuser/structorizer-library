@@ -2,20 +2,24 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { EditorRoutingModule } from './editor-routing.module';
-import { SidebarComponent } from '../sidebar/sidebar.component';
-import { ContextComponent } from '../draw/context/context/context.component';
-import { RectangleComponent } from '../draw/rectangle/rectangle.component';
+import { DrawModule } from '../draw/draw.module';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { EditorComponent } from './editor/editor.component';
+import { PlayfieldComponent } from './playfield/playfield.component';
+import { TabComponent } from './tab/tab.component';
 
 
 @NgModule({
   declarations: [
+    EditorComponent,
     SidebarComponent,
-    ContextComponent,
-    RectangleComponent,
+    PlayfieldComponent,
+    TabComponent,
   ],
   imports: [
     CommonModule,
-    EditorRoutingModule
+    EditorRoutingModule,
+    DrawModule
   ],
   exports: [
     EditorRoutingModule

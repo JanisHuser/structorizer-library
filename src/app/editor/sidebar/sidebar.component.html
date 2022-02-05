@@ -1,0 +1,16 @@
+<div class="sidebar">
+    <p class="title">Components</p>
+    <div *ngFor="let component of components"
+        class="component">
+        <p class="component-title">{{component.title}}</p>
+        <div class="drawing"
+            [style.height]="'100px'">
+            <app-draw-component
+            [component]="component"
+            [style.height]="'100px'"
+            [style.width]="'70%'"
+        ></app-draw-component>
+        </div>
+        
+    </div>
+</div>

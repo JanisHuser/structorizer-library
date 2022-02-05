@@ -1,0 +1,33 @@
+
+.tab {
+    display: grid;
+    grid-template-columns: auto 2em;
+    background-color: #fff;
+    border-radius: 8px 8px 0 0;
+    height: 100%;
+    padding: 0.6em;
+    cursor: pointer;
+    
+
+    .title {
+        grid-column: 1;
+        margin: 0;
+        padding: 0;
+    }
+    .close {
+        grid-column: 2;
+        text-align: center;
+        font-weight: 700;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+    &:not(.active) {
+        background-color: rgba(0,0,0,0.2);
+        color: #666;
+
+        &:hover {
+            background-color: lighten(rgba(0,0,0,0.2),20%);
+        }
+    }
+}
