@@ -28,7 +28,6 @@ export class PlayfieldComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
   removeTab(tab: ITabData) {
     if (this.tabs.length == 1) {
       //TODO: show message, last tab cannot be deleted

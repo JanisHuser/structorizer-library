@@ -1,18 +1,15 @@
-<div
-    [style.width]="rect.width"
-    [style.height]="rect.height"
-    [style.left]="rect.x"
-    [style.top]="rect.y"
-    [style.border-radius]="[rect.rx,rect.ry,rect.rx,rect.ry]"
-    [style.backgroundColor]="rect.color"
-    [ngStyle]="
-    {
-        'border-color': (rect.border != undefined && rect.border.color != undefined) ? rect.border.color : 'transparent',
-        'border-width': rect.border != undefined ? rect.border.width : '1px',
-        'border-style': rect.border != undefined ? toEnumStyle(rect.border.style) : 'none'
+<div 
+    [style.marginLeft]="data.left"
+    [style.marginTop]="data.top"
+    [style.width]="'calc(100% - ' + data.left + ' - ' +data.right + ')'"
+    [style.height]="'calc(100% - ' + data.top + ' - ' +data.bottom + ')'"
+    [ngStyle]="{
+        'background-color': data.color != undefined ? data.color : '#ffffff',
+        'border-color': (data.border != undefined && data.border.color != undefined) ? data.border.color : 'transparent',
+        'border-width': data.border != undefined ? data.border.width : '1px',
+        'border-style': data.border != undefined ? toEnumStyle(data.border.style) : 'none'
     }"
     class="rectangle"
->
-<div class="child-container" *ngIf="rect.acceptsChildren"></div>
-
+    >
+    <div class="child-container" *ngIf="data.acceptsChildren"></div>
 </div>

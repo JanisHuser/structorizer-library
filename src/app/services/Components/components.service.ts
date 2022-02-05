@@ -31,28 +31,28 @@ export class ComponentsService {
           {
             rectangle: {
               border: {
-                width: "1px",
-                color: "black",
+                width: '1px',
+                color: "#000",
                 style: BorderStyle.solid
               },
-              x: "0%",
-              y: "0%",
-              width: "100%",
-              height: "100%"
+              left: "0px",
+              top: "0px",
+              right: "0px",
+              bottom: "0px",
             }
           },
           {
             rectangle: {
               border: {
-                width: "1px",
-                color: "black",
+                width: '1px',
+                color: "#000",
                 style: BorderStyle.solid
               },
-              x: "20%",
-              y: "20%",
-              height: "60%",
-              width: "80%",
-              acceptsChildren: true
+              left: "20px",
+              top: "20px",
+              right: "0px",
+              bottom: "20px",
+              acceptsChildren: true,
             }
           }
         ]

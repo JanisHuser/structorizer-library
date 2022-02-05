@@ -1,36 +1,20 @@
-import { Component, HostListener, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { IRectangle } from 'src/app/data/drawing/shapes/irectangle';
 import { DrawBaseClass } from '../draw-base-class';
-import { MouseState } from '../general/mouse-state';
 
 @Component({
-  selector: 'draw-rectangle',
+  selector: 'app-draw-rectangle',
   templateUrl: './rectangle.component.html',
-  styleUrls: ['./rectangle.component.scss'],
+  styleUrls: ['./rectangle.component.scss']
 })
-export class RectangleComponent extends DrawBaseClass implements OnInit{
+export class RectangleComponent extends DrawBaseClass implements OnInit {
 
-  @Input() acceptsChildren: boolean | undefined = false;
-  @Input() rect!: IRectangle;
-
+  @Input() data!: IRectangle ;
   constructor() {
     super();
   }
 
-  ngOnInit(): void { }
-
-  @HostListener('mousedown') onMouseDown() {
-    DrawBaseClass.MouseState = MouseState.MouseDown;
+  ngOnInit(): void {
   }
-
-  @HostListener('mouseup') onMouseUp() {
-    DrawBaseClass.MouseState = MouseState.MouseUp;
-  }
-
-  @HostListener('dblclick', ['$event'])
-  onDblClick(event: any) {
-    // Open Component Settings
-  }
-
 
 }
