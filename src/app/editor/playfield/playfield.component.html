@@ -1,1 +1,18 @@
-<p>playfield works!</p>
+<div class="playfield">
+    <div class="tabs">
+        <div class="tab"
+            *ngFor="let tab of tabs">
+            <app-tab
+                [data]="tab"
+                (remove)="removeTab($event)"
+                (enable)="enableTab($event)"
+            ></app-tab>
+        </div>
+    </div>
+    <div class="page">
+        <draw-context
+        *ngFor="let component of activeTab.components"
+        [component]="component"
+        ></draw-context>
+    </div>
+</div>

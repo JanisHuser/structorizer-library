@@ -1,0 +1,14 @@
+.view {
+    display: grid;
+    grid-template-rows: 4em calc(100vh - 4em);
+    .navigation {
+        grid-row: 1;
+        max-height: 4em;
+        min-height: 4em;
+    }
+
+    .outlet {
+        grid-row-start: 2;
+        grid-row-end:2;
+    }
+}

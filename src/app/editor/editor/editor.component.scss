@@ -1,9 +1,15 @@
 .editor {
-    display: flex;
-    height: calc(100vh - 8em);
+    padding: 0;
+    display: grid;
+    grid-template-columns: 16em auto;
+    height: 100%;
     .sidebar {
-        width: 14em;
+        grid-column:1;
         height: 100%;
-        background-color: #efefef;
+        
+    }
+
+    .playfield {
+        grid-column: 2;
     }
 }

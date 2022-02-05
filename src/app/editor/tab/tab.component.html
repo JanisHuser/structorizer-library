@@ -1,0 +1,9 @@
+<div class="tab"
+[ngClass]="{
+ 'active': data != undefined ? data.isActive : false
+}"
+(click)="activateTab()"
+>
+    <p class="title">{{ data != undefined && data.title != undefined ? data.title : 'no-title-set'}}</p>
+    <a class="close" (click)="removeTab()">&times;</a>
+</div>  
