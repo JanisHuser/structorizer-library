@@ -2,7 +2,7 @@
     <p class="title">Components</p>
     <div *ngFor="let component of components"
         class="component">
-        <p class="component-title">{{component.title}}</p>
+        <p class="component-title">{{ language.get(component.title)}}</p>
         <div class="drawing"
             [style.height]="'100px'">
             <app-draw-component
