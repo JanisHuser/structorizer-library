@@ -17,7 +17,9 @@ export class SidebarComponent implements OnInit {
     public language: LanguageService,
     private globals: GlobalService
   ) {
-    this.components = this.component.getComponents();
+    this.component.getComponents().subscribe({
+      next: (v) => this.components = v
+    })
   }
 
   ngOnInit(): void {

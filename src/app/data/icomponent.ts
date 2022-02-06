@@ -1,9 +1,9 @@
 import { IDrawing } from "./idrawing";
-import { ILanguage } from "./language/ilanguage";
+import { ITranslation } from "./visual/itranslation";
 
 export interface IComponent {
-    title: ILanguage;
-    description: ILanguage;
+    title: ITranslation;
+    description: ITranslation;
     acceptsChildren?: boolean;
     drawing?: IDrawing[];
     identifier: string;

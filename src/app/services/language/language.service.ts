@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { ILanguage } from 'src/app/data/language/ilanguage';
 import { Language } from 'src/app/data/language/language';
+import { ITranslation } from 'src/app/data/visual/itranslation';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +13,7 @@ export class LanguageService {
     // alert(userLang);
   }
 
-  get(text: ILanguage) : string {
+  get(text: ITranslation) : string {
     if (text != undefined) {
       switch(this.selectedLanguage) {
         case Language.en: return text.en;

@@ -28,7 +28,7 @@ export class PlayfieldComponent implements OnInit, AfterViewInit {
       title: "main",
       components:
       [
-        this.components.getComponents()[0],
+        ¥
         
       ],
       isActive: true
@@ -52,7 +52,7 @@ export class PlayfieldComponent implements OnInit, AfterViewInit {
 
 
     this.tabs[0].components = [];
-    this.tabs[0].components.push(this.components.getComponents()[0])
+    this.tabs[0].components.push(this.components.getComponent("while-loop"));
   }
 
   ngOnInit(): void {
