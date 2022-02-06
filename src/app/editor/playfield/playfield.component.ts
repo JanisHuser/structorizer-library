@@ -36,10 +36,6 @@ export class PlayfieldComponent implements OnInit, AfterViewInit {
     }
   ];
 
-
-
-  private MOUSE_CURSOR_DELTA: number  = 20;
-
   activeTab: ITabData = this.tabs[0];
   constructor(
     private components: ComponentsService,
@@ -57,7 +53,6 @@ export class PlayfieldComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-    
   }
 
   ngAfterViewInit() : void {

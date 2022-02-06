@@ -1,0 +1,5 @@
+
+<app-draw-component
+    *ngFor="let export of component.children"
+    [component]="toComponent(export)!"
+></app-draw-component>

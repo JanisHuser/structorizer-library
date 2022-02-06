@@ -1,7 +1,7 @@
 import { IIdentifier } from "../common/iidentifier";
 
 export interface IComponentExport {
-    type: IIdentifier;
+    identifier: string;
     children: IComponentExport[];
     properties: Map<string,any>;
 }

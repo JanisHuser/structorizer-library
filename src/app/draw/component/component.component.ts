@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
 import { IComponentExport } from 'src/app/data/export/icomponent-export';
 import { IComponent } from 'src/app/data/visual/icomponent';
 
@@ -12,8 +12,10 @@ export class ComponentComponent implements OnInit {
   @Input() component! : IComponent;
   @Input() data!: IComponentExport;
 
-  constructor() { }
+  constructor() { 
+  }
   
   ngOnInit(): void {
   }
+
 }

@@ -7,5 +7,5 @@ export interface IRectangle extends IShape {
     right: number | string;
     bottom: number | string;
     border?: IBorder;
-    isChildContainer?: boolean;
+    
 }

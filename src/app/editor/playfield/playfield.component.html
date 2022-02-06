@@ -20,12 +20,17 @@
         
     </div>
 
-    <app-draw-component
+
+    <app-draw-parser
+    [component]="components">
+
+    </app-draw-parser>
+    <!-- <app-draw-component
             class="draggable-component"
             *ngIf="activeComponent != undefined"
             [style.left]="lastCursorPosition.x + 'px'"
             [style.top]="lastCursorPosition.y + 'px'"
             [style.width]="previewElementSize.x + 'px'"
             [style.height]="previewElementSize.y + 'px'"
-            [component]="activeComponent"></app-draw-component>
+            [component]="activeComponent"></app-draw-component> -->
 </div>

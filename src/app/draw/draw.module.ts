@@ -4,6 +4,7 @@ import { RectangleComponent } from './rectangle/rectangle.component';
 import { TextComponent } from './text/text.component';
 import { ComponentComponent } from './component/component.component';
 import { ChildComponent } from './child/child.component';
+import { ParserComponent } from './parser/parser.component';
 
 
 
@@ -13,6 +14,7 @@ import { ChildComponent } from './child/child.component';
     TextComponent,
     ComponentComponent,
     ChildComponent,
+    ParserComponent,
   ],
   imports: [
     CommonModule
