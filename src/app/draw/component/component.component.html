@@ -1,8 +1,8 @@
 <div
 class="drawing">
     <app-draw-rectangle
-        *ngFor="let rect of rectangles"
-        [rectangle]="rect"
+        *ngFor="let rectangle of component.rectangles"
+        [rectangle]="rectangle"
         [data]="data"
         class="shape">
     </app-draw-rectangle>

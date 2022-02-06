@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IText } from 'src/app/data/drawing/text/itext';
+import { IText } from 'src/app/data/visual/draw/itext';
 import { DrawBaseClass } from '../draw-base-class';
 
 @Component({
@@ -9,7 +9,7 @@ import { DrawBaseClass } from '../draw-base-class';
 })
 export class TextComponent extends DrawBaseClass implements OnInit {
 
-  @Input() data!: IText;
+  @Input() text!: IText;
 
   constructor() {
     super();

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IComponent } from 'src/app/data/icomponent';
+import { IComponent } from 'src/app/data/visual/icomponent';
 
 @Component({
   selector: 'app-editor',

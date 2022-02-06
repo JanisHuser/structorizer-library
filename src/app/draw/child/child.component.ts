@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, ElementRef, Input, OnInit } from '@angular/core';
-import { IElementPosition } from 'src/app/data/drawing/position/ielement-position';
 import { IComponentExport } from 'src/app/data/export/icomponent-export';
 import { GlobalService } from 'src/app/services/global/global.service';
+import { ElementPosition } from '../positioning/element-position';
 
 const DELTA_RANGE: number = 10;
 
@@ -13,7 +13,7 @@ const DELTA_RANGE: number = 10;
 export class ChildComponent implements OnInit, AfterViewInit {
 
   @Input() data!: IComponentExport;
-  position: IElementPosition = {x1:0,y1:0,x2:0,y2:0};
+  position?: ElementPosition;
   mouseOverPre: boolean = false;
   mouseOverAfter: boolean = false;
   componentInitialized: boolean = false;
@@ -26,11 +26,6 @@ export class ChildComponent implements OnInit, AfterViewInit {
 
     this.globals.getPlayfieldCursorPosition().subscribe(
       position => {
-        const inRangeY1 = () => this.inRange(this.position.y1,position.y, DELTA_RANGE);
-        const inRangeY2 = () => this.inRange(this.position.y2,position.y, DELTA_RANGE);
-        
-        const inRangeX1 = () => position.x >= this.position.x1;
-        const inRangeX2 = () => position.x <= this.position.x2;
 
         if (!this.componentInitialized) {
           return;
@@ -40,22 +35,18 @@ export class ChildComponent implements OnInit, AfterViewInit {
           return;
         }
 
-        if (!inRangeX1() || !inRangeX2()) {
+        if(!this.position!.inRangeX(position.x)) {
           this.mouseOverAfter = false;
           this.mouseOverPre = false;
           return;
         }
 
-        if (inRangeY1()) {
+        if (this.position!.inRangeTop(position.y)) {
           this.mouseOverPre = true;
-        } else {
-          this.mouseOverPre = false;
         }
-
-        if (inRangeY2()) {
+        
+        if (this.position!.inRangeBottom(position.y)) {
           this.mouseOverAfter = true;
-        } else {
-          this.mouseOverAfter = false;
         }
       }
     );
@@ -70,15 +61,7 @@ export class ChildComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() : void {
-    const rect = this.element.nativeElement.getBoundingClientRect();
-
-    this.position = {
-      x1: rect.left,
-      x2: rect.left + rect.width,
-      y1: rect.top,
-      y2: rect.top + rect.height
-    };
-
+    this.position = new ElementPosition(this.element);
     this.componentInitialized = true;
   }
 

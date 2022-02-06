@@ -1,5 +1,5 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { IComponent } from 'src/app/data/icomponent';
+import { Component, OnInit } from '@angular/core';
+import { IComponent } from 'src/app/data/visual/icomponent';
 import { ComponentsService } from 'src/app/services/Components/components.service';
 import { GlobalService } from 'src/app/services/global/global.service';
 import { LanguageService } from 'src/app/services/language/language.service';
@@ -10,16 +10,13 @@ import { LanguageService } from 'src/app/services/language/language.service';
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent implements OnInit {
-  components: IComponent[] = [];
 
   constructor(
-    private component: ComponentsService,
+    public component: ComponentsService,
     public language: LanguageService,
     private globals: GlobalService
   ) {
-    this.component.getComponents().subscribe({
-      next: (v) => this.components = v
-    })
+
   }
 
   ngOnInit(): void {

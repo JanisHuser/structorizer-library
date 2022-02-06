@@ -2,10 +2,11 @@ import {
   Component,
   AfterViewInit,
   OnInit,
-  Output, EventEmitter, Input, HostListener, ElementRef} from '@angular/core';
-import { IPosition } from 'src/app/data/drawing/position/iposition';
-import { IComponent } from 'src/app/data/icomponent';
+  Output, EventEmitter, HostListener, ElementRef} from '@angular/core';
 import { ITabData } from 'src/app/data/tab/itab-data';
+import { IComponent } from 'src/app/data/visual/icomponent';
+import { ElementPosition } from 'src/app/draw/positioning/element-position';
+import { IPosition } from 'src/app/draw/positioning/iposition';
 import { ComponentsService } from 'src/app/services/Components/components.service';
 import { GlobalService } from 'src/app/services/global/global.service';
 
@@ -18,7 +19,7 @@ export class PlayfieldComponent implements OnInit, AfterViewInit {
 
   @Output() activeTabChanged = new EventEmitter<ITabData>();
 
-  elementPosition: IPosition = {x:0,y:0};
+  elementPosition?: ElementPosition;
   previewElementSize: IPosition = {x:100,y:100};
   lastCursorPosition: IPosition = {x:0,y:0};
   activeComponent: IComponent | undefined = undefined;
@@ -28,7 +29,7 @@ export class PlayfieldComponent implements OnInit, AfterViewInit {
       title: "main",
       components:
       [
-        ¥
+        
         
       ],
       isActive: true
@@ -52,7 +53,7 @@ export class PlayfieldComponent implements OnInit, AfterViewInit {
 
 
     this.tabs[0].components = [];
-    this.tabs[0].components.push(this.components.getComponent("while-loop"));
+    this.tabs[0].components.push(this.components.getComponent({identifier:"while-loop"})!);
   }
 
   ngOnInit(): void {
@@ -60,15 +61,12 @@ export class PlayfieldComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() : void {
-    const rect = this.element.nativeElement.getBoundingClientRect();
-    this.elementPosition.x = rect.left;
-    this.elementPosition.y = rect.top;
-
+    this.elementPosition = new ElementPosition(this.element);
 
     this.globals.setPlayfieldCursorPosition({
-      x: rect.left,
-      y: rect.top
-    })
+      x: this.elementPosition.x1,
+      y: this.elementPosition.y1
+    });
   }
 
   removeTab(tab: ITabData) {
@@ -127,12 +125,12 @@ export class PlayfieldComponent implements OnInit, AfterViewInit {
       y: e.pageY - this.previewElementSize.y / 2
     };
 
-
-    if (this.elementPosition.x > position.x ) {
-      position.x = this.elementPosition.x;
+    if (this.elementPosition!.x1 > position.x) {
+      position.x = this.elementPosition!.x1;
     }
-    if (this.elementPosition.y >  position.y ) {
-      position.y = this.elementPosition.y;
+
+    if (this.elementPosition!.y1 > position.y) {
+      position.x = this.elementPosition!.y1;
     }
 
     this.lastCursorPosition = position;

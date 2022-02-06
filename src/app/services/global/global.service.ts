@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { IPosition } from 'src/app/data/drawing/position/iposition';
-import { IComponent } from 'src/app/data/icomponent';
+import { IComponent } from 'src/app/data/visual/icomponent';
+import { IPosition } from 'src/app/draw/positioning/iposition';
 
 @Injectable({
   providedIn: 'root'

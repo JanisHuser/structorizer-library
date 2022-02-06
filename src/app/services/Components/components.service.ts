@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { IComponent } from 'src/app/data/icomponent';
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { IResponse } from 'src/app/data/iresponse';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { IComponent } from 'src/app/data/visual/icomponent';
+import { IIdentifier } from 'src/app/data/common/iidentifier';
 
 @Injectable({
   providedIn: 'root'
@@ -34,7 +35,7 @@ export class ComponentsService {
 
   }
 
-  getComponent(identifier: string) : IComponent |undefined {
+  getComponent(identifier: IIdentifier) : IComponent | undefined {
     return this.components.value.find(x => x.identifier == identifier);
   }
 

@@ -1,4 +1,4 @@
-import { BorderStyle } from "../data/drawing/border-style";
+import { BorderStyle } from "../data/visual/draw/border-style";
 import { MouseState } from "./general/mouse-state";
 
 export class DrawBaseClass {

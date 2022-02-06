@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IRectangle } from 'src/app/data/drawing/shapes/irectangle';
 import { IComponentExport } from 'src/app/data/export/icomponent-export';
+import { IRectangle } from 'src/app/data/visual/draw/irectangle';
 import { DrawBaseClass } from '../draw-base-class';
 
 @Component({

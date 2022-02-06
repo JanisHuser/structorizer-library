@@ -1,4 +1,4 @@
-import { IComponent } from "../icomponent";
+import { IComponent } from "../visual/icomponent";
 
 export interface ITabData {
     title: string;
