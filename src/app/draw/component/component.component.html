@@ -2,7 +2,8 @@
 class="drawing">
     <app-draw-rectangle
         *ngFor="let rect of rectangles"
-        [data]="rect"
+        [rectangle]="rect"
+        [data]="data"
         class="shape">
     </app-draw-rectangle>
 </div>

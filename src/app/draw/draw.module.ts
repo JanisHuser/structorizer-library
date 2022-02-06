@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RectangleComponent } from './rectangle/rectangle.component';
 import { TextComponent } from './text/text.component';
 import { ComponentComponent } from './component/component.component';
+import { ChildComponent } from './child/child.component';
 
 
 
@@ -11,6 +12,7 @@ import { ComponentComponent } from './component/component.component';
     RectangleComponent,
     TextComponent,
     ComponentComponent,
+    ChildComponent,
   ],
   imports: [
     CommonModule

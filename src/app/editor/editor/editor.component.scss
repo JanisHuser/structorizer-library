@@ -1,16 +1,16 @@
 .editor {
     padding: 0;
-    height:calc(100vh - 9em);
+    height:calc(100vh - 11em);
     .sidebar {
         display: inline-block;
         width: 16em;
-        height: calc(100vh - 11em);
+        height: calc(100vh - 13em);
     }
 
     .playfield {
         display: inline-block;
         width: calc(100vw - 16em);
-        height: calc(100vh - 10em);
+        height: calc(100vh - 12em);
         vertical-align: top;
         height: 100%;
     }

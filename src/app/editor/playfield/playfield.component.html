@@ -14,9 +14,18 @@
             *ngFor="let component of activeTab.components">
         <app-draw-component
             [component]="component"
-            [style.width]="'300px'"
-            [style.height]="'300px'"></app-draw-component>
+            [style.minWidth]="'300px'"
+            [style.minHeight]="'300px'"></app-draw-component>
         </div>
         
     </div>
+
+    <app-draw-component
+            class="draggable-component"
+            *ngIf="activeComponent != undefined"
+            [style.left]="lastCursorPosition.x + 'px'"
+            [style.top]="lastCursorPosition.y + 'px'"
+            [style.width]="previewElementSize.x + 'px'"
+            [style.height]="previewElementSize.y + 'px'"
+            [component]="activeComponent"></app-draw-component>
 </div>

@@ -26,9 +26,16 @@
         grid-row: 2;
         padding: 1em;
         border-radius: 4px 4px 0 0;
+        position: relative;
         .component {
+            position: relative;
             width: 70%;
-            height: 100px;
+            min-height: 100px;
         }
+
+        
+    }
+    .draggable-component {
+        position: absolute;
     }
 }

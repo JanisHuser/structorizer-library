@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { IComponent } from 'src/app/data/icomponent';
 
 @Component({
   selector: 'app-editor',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditorComponent implements OnInit {
 
+  activeComponent: IComponent | undefined = undefined;
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  activateComponent(component: IComponent) {
+    this.activeComponent = component;
   }
 
 }

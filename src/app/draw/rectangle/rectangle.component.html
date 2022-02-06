@@ -1,15 +1,20 @@
 <div 
-    [style.marginLeft]="data.left"
-    [style.marginTop]="data.top"
-    [style.width]="'calc(100% - ' + data.left + ' - ' +data.right + ')'"
-    [style.height]="'calc(100% - ' + data.top + ' - ' +data.bottom + ')'"
+    [style.marginLeft]="rectangle.left"
+    [style.marginTop]="rectangle.top"
+    [style.width]="'calc(100% - ' + rectangle.left + ' - ' +rectangle.right + ')'"
+    [style.height]="'calc(100% - ' + rectangle.top + ' - ' +rectangle.bottom + ')'"
+    [style.minHeight]="'calc(' + rectangle.top + 'px + ' + rectangle.bottom + 'px)'"
     [ngStyle]="{
-        'background-color': data.color != undefined ? data.color : '#ffffff',
-        'border-color': (data.border != undefined && data.border.color != undefined) ? data.border.color : 'transparent',
-        'border-width': data.border != undefined ? data.border.width : '1px',
-        'border-style': data.border != undefined ? toEnumStyle(data.border.style) : 'none'
+        'background-color': rectangle.color != undefined ? rectangle.color : '#ffffff',
+        'border-color': (rectangle.border != undefined && rectangle.border.color != undefined) ? rectangle.border.color : 'transparent',
+        'border-width': rectangle.border != undefined ? rectangle.border.width : '1px',
+        'border-style': rectangle.border != undefined ? toEnumStyle(rectangle.border.style) : 'none'
     }"
     class="rectangle"
-    >
-    <div class="child-container" *ngIf="data.acceptsChildren"></div>
+>
+    <app-draw-child
+        [data]="data"
+        *ngIf="rectangle.acceptsChildren">
+    </app-draw-child>
 </div>
+

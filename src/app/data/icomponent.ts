@@ -6,4 +6,5 @@ export interface IComponent {
     description: ILanguage;
     acceptsChildren?: boolean;
     drawing?: IDrawing[];
+    identifier: string;
 }

@@ -1,0 +1,12 @@
+<div
+    class="child-container-pre"
+    *ngIf="mouseOverPre"></div>
+<div class="child-container">
+    <app-draw-component
+        *ngFor="let child of data.children"
+        [data]="child">
+    </app-draw-component>
+</div>
+<div
+    class="child-container-after"
+    *ngIf="mouseOverAfter"></div>

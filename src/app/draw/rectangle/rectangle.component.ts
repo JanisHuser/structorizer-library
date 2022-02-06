@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { IRectangle } from 'src/app/data/drawing/shapes/irectangle';
+import { IComponentExport } from 'src/app/data/export/icomponent-export';
 import { DrawBaseClass } from '../draw-base-class';
 
 @Component({
@@ -9,7 +10,8 @@ import { DrawBaseClass } from '../draw-base-class';
 })
 export class RectangleComponent extends DrawBaseClass implements OnInit {
 
-  @Input() data!: IRectangle ;
+  @Input() rectangle!: IRectangle;
+  @Input() data!: IComponentExport;
   constructor() {
     super();
   }
