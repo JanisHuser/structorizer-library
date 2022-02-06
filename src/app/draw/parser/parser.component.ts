@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IComponentExport } from 'src/app/data/export/icomponent-export';
+import { IStructure } from 'src/app/data/document/istructure';
 import { IComponent } from 'src/app/data/visual/icomponent';
 import { ComponentsService } from 'src/app/services/Components/components.service';
 
@@ -9,16 +9,17 @@ import { ComponentsService } from 'src/app/services/Components/components.servic
   styleUrls: ['./parser.component.scss']
 })
 export class ParserComponent implements OnInit {
-  @Input() component!: IComponentExport;
+  @Input() structure!: IStructure;
   constructor(
     private componentService: ComponentsService
-  ) { }
+  ) {
+  }
 
   ngOnInit(): void {
   }
 
 
-  toComponent(c: IComponentExport) : IComponent | undefined {
+  toComponent(c: IStructure) : IComponent | undefined {
     return this.componentService.getComponent({ identifier: c.identifier});
   }
 

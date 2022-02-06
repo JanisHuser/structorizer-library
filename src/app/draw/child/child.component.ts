@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, ElementRef, Input, OnInit } from '@angular/core';
-import { IComponentExport } from 'src/app/data/export/icomponent-export';
+import { IStructure } from 'src/app/data/document/istructure';
 import { GlobalService } from 'src/app/services/global/global.service';
 import { ElementPosition } from '../positioning/element-position';
 
@@ -12,7 +12,7 @@ const DELTA_RANGE: number = 10;
 })
 export class ChildComponent implements OnInit, AfterViewInit {
 
-  @Input() data!: IComponentExport;
+  @Input() structure!: IStructure;
   position?: ElementPosition;
   mouseOverPre: boolean = false;
   mouseOverAfter: boolean = false;

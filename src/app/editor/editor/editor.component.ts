@@ -8,14 +8,10 @@ import { IComponent } from 'src/app/data/visual/icomponent';
 })
 export class EditorComponent implements OnInit {
 
-  activeComponent: IComponent | undefined = undefined;
+  document: Document = new Document();
   constructor() { }
 
   ngOnInit(): void {
-  }
-
-  activateComponent(component: IComponent) {
-    this.activeComponent = component;
   }
 
 }

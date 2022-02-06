@@ -3,8 +3,8 @@
     *ngIf="mouseOverPre"></div>
 <div class="child-container">
     <app-draw-component
-        *ngFor="let child of data.children"
-        [data]="child">
+        *ngFor="let structure of structure.children"
+        [structure]="structure">
     </app-draw-component>
 </div>
 <div

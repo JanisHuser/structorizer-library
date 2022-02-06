@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, Output,EventEmitter } from '@angular/core';
-import { ITabData } from 'src/app/data/tab/itab-data';
+import { IPage } from 'src/app/data/document/ipage';
 
 @Component({
   selector: 'app-tab',
@@ -8,10 +8,11 @@ import { ITabData } from 'src/app/data/tab/itab-data';
 })
 export class TabComponent implements OnInit {
 
-  @Input() data: ITabData | undefined;
+  @Input() data!: IPage;
+  @Input() isActive: boolean = false;
 
-  @Output() remove = new EventEmitter<ITabData >();
-  @Output() enable = new EventEmitter<ITabData>();
+  @Output() remove = new EventEmitter<IPage>();
+  @Output() enable = new EventEmitter<IPage>();
   constructor() { }
 
   ngOnInit(): void {

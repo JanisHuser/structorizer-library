@@ -1,9 +1,9 @@
 <div
 class="drawing">
     <app-draw-rectangle
-        *ngFor="let rectangle of component.rectangles"
+        *ngFor="let rectangle of getComponent().rectangles"
         [rectangle]="rectangle"
-        [data]="data"
+        [structure]="structure"
         class="shape">
     </app-draw-rectangle>
 </div>

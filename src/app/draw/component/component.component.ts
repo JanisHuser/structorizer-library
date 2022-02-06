@@ -1,6 +1,7 @@
-import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
-import { IComponentExport } from 'src/app/data/export/icomponent-export';
+import { Component, Input, OnInit } from '@angular/core';
+import { IStructure } from 'src/app/data/document/istructure';
 import { IComponent } from 'src/app/data/visual/icomponent';
+import { ComponentsService } from 'src/app/services/Components/components.service';
 
 @Component({
   selector: 'app-draw-component',
@@ -9,13 +10,20 @@ import { IComponent } from 'src/app/data/visual/icomponent';
 })
 export class ComponentComponent implements OnInit {
 
-  @Input() component! : IComponent;
-  @Input() data!: IComponentExport;
+  @Input() structure!: IStructure;
 
-  constructor() { 
+  constructor(
+    private componentService: ComponentsService
+  ) { 
   }
   
   ngOnInit(): void {
   }
+
+  getComponent() : IComponent {
+    return this.componentService.getComponent({identifier: this.structure.identifier})!;
+  }
+
+  
 
 }

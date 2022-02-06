@@ -1,7 +1,7 @@
 <div class="playfield">
     <div class="tabs">
         <div class="tab"
-            *ngFor="let tab of tabs">
+            *ngFor="let page of document.getPages() | async">
             <app-tab
                 [data]="tab"
                 (remove)="removeTab($event)"
@@ -10,21 +10,20 @@
         </div>
     </div>
     <div class="page">
-        <div class="component"
+        <!-- <div class="component"
             *ngFor="let component of activeTab.components">
         <app-draw-component
             [component]="component"
             [style.minWidth]="'300px'"
             [style.minHeight]="'300px'"></app-draw-component>
-        </div>
+        </div> -->
         
     </div>
 
-
+<!-- 
     <app-draw-parser
-    [component]="components">
-
-    </app-draw-parser>
+    [structure]="structure">
+    </app-draw-parser> -->
     <!-- <app-draw-component
             class="draggable-component"
             *ngIf="activeComponent != undefined"
