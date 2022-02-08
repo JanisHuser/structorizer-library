@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ElementRef, Input, OnInit } from '@angular/core';
 import { IStructure } from 'src/app/data/document/istructure';
-import { GlobalService } from 'src/app/services/global/global.service';
+import { PlaygroundService } from 'src/app/services/playground/playground.service';
 import { ElementPosition } from '../positioning/element-position';
 
 const DELTA_RANGE: number = 10;
@@ -17,21 +17,29 @@ export class ChildComponent implements OnInit, AfterViewInit {
   mouseOverPre: boolean = false;
   mouseOverAfter: boolean = false;
   componentInitialized: boolean = false;
-  
+  componentActive: boolean = false;
 
   constructor(
-    private globals: GlobalService,
+    private playground: PlaygroundService,
     private element: ElementRef
   ) { 
+    this.playground.getActiveComponentIdentifier().subscribe({
+      next: (id) => {
+        if (id.identifier == undefined || id.identifier.length == 0) {
+          this.componentActive = false;
+        } else {
+          this.componentActive = true;
+        }
+      }
+    });
 
-    this.globals.getPlayfieldCursorPosition().subscribe(
-      position => {
-
+    this.playground.getPosition().subscribe({
+      next: (position) => {
         if (!this.componentInitialized) {
           return;
         }
 
-        if (this.globals.getSelectedComponentValue() == undefined) {
+        if (!this.componentActive) {
           return;
         }
 
@@ -49,7 +57,7 @@ export class ChildComponent implements OnInit, AfterViewInit {
           this.mouseOverAfter = true;
         }
       }
-    );
+    });
   }
 
   inRange(a:number, b: number, delta: number) : boolean {

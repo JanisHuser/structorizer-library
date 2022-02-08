@@ -35,8 +35,8 @@ export class ComponentsService {
 
   }
 
-  getComponent(identifier: IIdentifier) : IComponent | undefined {
-    return this.components.value.find(x => x.identifier == identifier);
+  getComponent(identifier: string) : IComponent | undefined {
+    return this.components.value.find(x => x.identifier.identifier == identifier);
   }
 
 

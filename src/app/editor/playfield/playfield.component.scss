@@ -19,6 +19,15 @@
             // padding-left: .25em;
 
         }
+
+        .add-page {
+            display: inline-block;
+            padding: .5em;
+            cursor: pointer;
+            margin-left: .25em;
+            border-radius: 16px;
+            font-weight: bold;
+        }
     }
 
     .page {
@@ -33,9 +42,9 @@
             min-height: 100px;
         }
 
-        
+        .draggable-component {
+            position: absolute;
+        }
     }
-    .draggable-component {
-        position: absolute;
-    }
+    
 }

@@ -20,7 +20,8 @@ import { ParserComponent } from './parser/parser.component';
     CommonModule
   ],
   exports: [
-    ComponentComponent
+    ComponentComponent,
+    ParserComponent
   ]
 })
 export class DrawModule { }

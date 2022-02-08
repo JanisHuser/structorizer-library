@@ -1,35 +1,40 @@
 <div class="playfield">
     <div class="tabs">
         <div class="tab"
-            *ngFor="let page of document.getPages() | async">
+            *ngFor="let page of (document.getDocument() | async)!.pages">
             <app-tab
-                [data]="tab"
-                (remove)="removeTab($event)"
-                (enable)="enableTab($event)"
+                [data]="page"
+                [isActive]="(document.getActivePage()) == page"
+                (remove)="removePage($event)"
+                (enable)="enablePage($event)"
             ></app-tab>
         </div>
+        <a class="add-page"
+        (click)="addNewPage()">
+            +
+        </a>
     </div>
     <div class="page">
-        <!-- <div class="component"
-            *ngFor="let component of activeTab.components">
-        <app-draw-component
-            [component]="component"
-            [style.minWidth]="'300px'"
-            [style.minHeight]="'300px'"></app-draw-component>
-        </div> -->
-        
-    </div>
 
-<!-- 
-    <app-draw-parser
-    [structure]="structure">
-    </app-draw-parser> -->
-    <!-- <app-draw-component
-            class="draggable-component"
-            *ngIf="activeComponent != undefined"
-            [style.left]="lastCursorPosition.x + 'px'"
-            [style.top]="lastCursorPosition.y + 'px'"
+        <app-draw-parser
+        class="draggable-component"
+            [structure]="document.getActivePage()!.structure"
+            *ngIf="activeStructure.identifier != ''"
+            [style.left]="(playground.getPosition() | async)!.x + 'px'"
+            [style.top]="(playground.getPosition() | async)!.y + 'px'"
             [style.width]="previewElementSize.x + 'px'"
             [style.height]="previewElementSize.y + 'px'"
-            [component]="activeComponent"></app-draw-component> -->
+            ></app-draw-parser>
+        
+
+        <app-draw-parser
+        class="draggable-component"
+            [structure]="activeStructure"
+            *ngIf="activeStructure.identifier != ''"
+            [style.left]="(playground.getPosition() | async)!.x + 'px'"
+            [style.top]="(playground.getPosition() | async)!.y + 'px'"
+            [style.width]="previewElementSize.x + 'px'"
+            [style.height]="previewElementSize.y + 'px'"
+            ></app-draw-parser>
+    </div>
 </div>

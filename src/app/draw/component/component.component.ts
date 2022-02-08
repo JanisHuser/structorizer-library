@@ -21,7 +21,12 @@ export class ComponentComponent implements OnInit {
   }
 
   getComponent() : IComponent {
-    return this.componentService.getComponent({identifier: this.structure.identifier})!;
+    let component = this.componentService.getComponent(this.structure.identifier);
+
+    
+    
+
+    return component!;
   }
 
   

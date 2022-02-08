@@ -1,5 +1,5 @@
 export interface IStructure {
     identifier: string;
-    children: IStructure[];
-    properties: Map<string,any>;
+    children?: IStructure[];
+    properties?: Map<string,any>;
 }
