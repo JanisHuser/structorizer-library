@@ -1,0 +1,15 @@
+.config {
+    .header {
+        font-weight: 600;
+    }
+
+    .property {
+        display: flex;
+        .key {
+            width: 50%;
+        }
+        .value {
+            width: 50%;
+        }
+    }
+}

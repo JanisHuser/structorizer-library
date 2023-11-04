@@ -6,4 +6,11 @@ class="drawing">
         [data]="rect"
         class="shape">
     </app-draw-rectangle>
+
+    <app-text
+        *ngFor="let text of texts"
+        [component]="component"
+        [data]="text"
+        class="text">
+        </app-text>
 </div>

@@ -31,12 +31,14 @@ const assemblerComponents = (): IComponent[] => {
             {
               description: "Name",
               name: "LITERAL_NAME",
-              type: InputOptionType.text
+              type: InputOptionType.text,
+              value: ""
             },
             {
               description: "Value",
               name: "LITERAL_VALUE",
-              type: InputOptionType.hex_value
+              type: InputOptionType.hex_value,
+              value: ""
             },
           ]
         }
@@ -56,7 +58,11 @@ const assemblerComponents = (): IComponent[] => {
           }
         },
         {
-        
+          text: {
+            x: "0px",
+            y: "0px",
+            template: "Load {{LITERAL_VALUE}} into {{LITERAL_NAME}}"
+          }
         }
       ]
     },

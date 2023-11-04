@@ -7,6 +7,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { EditorComponent } from './editor/editor.component';
 import { PlayfieldComponent } from './playfield/playfield.component';
 import { TabComponent } from './tab/tab.component';
+import { InputsComponent } from './inputs/inputs.component';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { TabComponent } from './tab/tab.component';
     SidebarComponent,
     PlayfieldComponent,
     TabComponent,
+    InputsComponent,
   ],
   imports: [
     CommonModule,

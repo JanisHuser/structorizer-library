@@ -1,0 +1,10 @@
+<div
+class="config"
+*ngFor="let config of inputs">
+    <div class="header">{{config.header["de"]}}</div>
+
+    <div *ngFor="let input of config.inputs" class="property">
+        <div class="key">{{input.description}}</div>
+        <input type="text" value="{{input.value}}" class="value" (change)="onInputChange(input)"/>
+    </div>
+</div>

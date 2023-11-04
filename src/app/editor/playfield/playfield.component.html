@@ -9,24 +9,38 @@
             ></app-tab>
         </div>
     </div>
-    <div class="page">
-        <div class="components"
-        *ngIf="activeTab.components.length > 0">
-        <div class="component"
-            *ngFor="let component of activeTab.components">
-            <app-draw-component
-                [component]="component"
-                [style.width]="'300px'"
-                [style.height]="'300px'"></app-draw-component>
+    <div class="content">
+        <div class="page"
+        [ngClass]="{'full-width' : selectedComponent == undefined}">
+        
+            <div class="components"
+            *ngIf="activeTab.components.length > 0">
+            <div class="component"
+                *ngFor="let component of activeTab.components">
+                <app-draw-component
+                    [component]="component"
+                    [style.width]="'300px'"
+                    [style.height]="'300px'"
+                    (mousedown)="componentSelected(component)">
+                </app-draw-component>
+                </div>
             </div>
+            <div class="component component-placeholder"
+                *ngIf="activeTab.components.length == 0" 
+                (mousedown)="placeholderClicked()"
+                (touchstart)="placeholderClicked()"
+            ></div>
+        </div>        
+
+        <div class="properties"
+        *ngIf="selectedComponent != undefined">
+            <div class="header">properties</div>
+            <app-inputs
+                [component]="selectedComponent"
+            ></app-inputs>
+
         </div>
         
-
-        <div class="component component-placeholder"
-            *ngIf="activeTab.components.length == 0" 
-            (mousedown)="placeholderClicked()"
-            (touchstart)="placeholderClicked()"
-        ></div>
     
         <app-draw-component #activeComponent
             *ngIf="this.hasActiveComponent == true"

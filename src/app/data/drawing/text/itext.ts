@@ -1,4 +1,3 @@
-import { IBinding } from "../binding/ibinding";
 import { Fonts } from "./fonts";
 
 export interface IText {
@@ -6,5 +5,6 @@ export interface IText {
     y: number | string;
     font?: Fonts;
     fontSize?: number | string;
-    binding?: IBinding; 
+    static?: string;
+    template?: string;
 }

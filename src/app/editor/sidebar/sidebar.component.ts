@@ -24,6 +24,7 @@ export class SidebarComponent implements OnInit {
   }
 
   addComponent(component: IComponent) {
+
     this.componentClickedEvent.emit(component);
   }
 

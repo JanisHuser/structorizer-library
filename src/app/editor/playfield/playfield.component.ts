@@ -53,6 +53,7 @@ export class PlayfieldComponent implements OnInit {
 
   activeTab: ITabData = this.tabs[0];
   activeComponentValue: IComponent = new EmptyComponent();
+  selectedComponent?: IComponent = undefined;
 
   hasActiveComponent: boolean = false
 
@@ -113,6 +114,8 @@ export class PlayfieldComponent implements OnInit {
   setComponentActive(component: IComponent) {
     this.activeComponentValue = component;
 
+    console.log(component)
+
     this.hasActiveComponent = true;
   }
 
@@ -134,6 +137,16 @@ export class PlayfieldComponent implements OnInit {
     this.activeTab.components.push(clonedComponent)
 
     this.hasActiveComponent = false;
+  }
+
+  componentSelected(component: IComponent) {
+
+    if (this.selectedComponent == component) {
+      this.selectedComponent = undefined;
+    } else {
+      this.selectedComponent = component;
+    }
+    
   }
 
 }

@@ -9,7 +9,7 @@ import { PlayfieldComponent } from '../playfield/playfield.component';
 })
 export class EditorComponent implements OnInit {
 
-  @ViewChild('playfield') playfield:PlayfieldComponent;
+  @ViewChild('playfield') playfield!: PlayfieldComponent;
   constructor() { }
 
   ngOnInit(): void {

@@ -6,9 +6,12 @@ export enum InputOptionType {
 }
 
 export interface IInputOption {
-    description: string
-    name: string
-    type: InputOptionType
+    description: string;
+    name: string;
+    type: InputOptionType;
+
+    value: any;
+    changed?: (() => void)[];
 }
 
 export interface IConfiguration {

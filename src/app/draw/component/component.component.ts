@@ -1,6 +1,7 @@
 import { AfterViewInit, ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ILine } from 'src/app/data/drawing/iline';
 import { IRectangle } from 'src/app/data/drawing/shapes/irectangle';
+import { IText } from 'src/app/data/drawing/text/itext';
 import { IComponent } from 'src/app/data/icomponent';
 
 @Component({
@@ -16,16 +17,20 @@ export class ComponentComponent implements OnInit, AfterViewInit {
 
   rectangles: IRectangle[] = [];
   lines: ILine[] = [];
+  texts: IText[] = [];
   constructor(
     private changeDetector: ChangeDetectorRef
   ) { }
 
   ngOnInit(): void {
+    
   }
+
   ngAfterViewInit() : void {
     if (!(this.component.drawing instanceof Array)) {
       return;
     }
+
 
     this.component.drawing.forEach(
       shape => {
@@ -34,6 +39,9 @@ export class ComponentComponent implements OnInit, AfterViewInit {
         }
         if (shape.line != null) {
           this.lines.push(shape.line);
+        }
+        if (shape.text != null) {
+          this.texts.push(shape.text);
         }
       }
     )
