@@ -11,5 +11,5 @@
     }"
     class="rectangle"
     >
-    <div class="child-container" *ngIf="data.acceptsChildren"></div>
+    <div class="child-container" *ngIf="data.acceptsChildren" (click)="containerClicked($event)"></div>
 </div>
