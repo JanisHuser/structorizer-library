@@ -5,23 +5,31 @@ import { ComponentsService } from 'src/app/services/Components/components.servic
 import { ComponentComponent } from 'src/app/draw/component/component.component';
 import { ILanguage } from 'src/app/data/language/ilanguage';
 import { IDrawing } from 'src/app/data/idrawing';
+import { ICodeLine } from 'src/app/data/icode';
+import { IConfiguration } from 'src/app/data/IInputOption';
 
 
 class EmptyComponent implements IComponent {
-  title: ILanguage = {
+  title = {
       en: '',
       de: ''
   };
-  description: ILanguage = {
+  description  = {
       en: '',
       de: ''
   };
   acceptsChildren: boolean | undefined;
   drawing: IDrawing[] | undefined;
 
+  
+
   constructor() {
       // Initialize the properties as needed
   }
+  languages = {};
+  
+  children?: { [index: number]: IComponent[]; } | undefined;
+  inputs?: IConfiguration[] | undefined;
 }
 
 

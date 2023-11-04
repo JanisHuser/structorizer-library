@@ -9,7 +9,7 @@ import { DrawBaseClass } from '../draw-base-class';
 })
 export class RectangleComponent extends DrawBaseClass implements OnInit {
 
-  @Output() childClickedEvent = new EventEmitter();
+  @Output() childClickedEvent = new EventEmitter<IRectangle>();
   @Input() data!: IRectangle;
   constructor() {
     super();
@@ -19,7 +19,7 @@ export class RectangleComponent extends DrawBaseClass implements OnInit {
   }
 
   childClicked(event: any) {
-    this.childClickedEvent.emit();
+    this.childClickedEvent.emit(this.data);
   }
 
 }

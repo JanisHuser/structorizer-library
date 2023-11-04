@@ -2,7 +2,7 @@
 class="drawing">
     <app-draw-rectangle
         *ngFor="let rect of rectangles"
-        [childClickedEvent]="childRectClicked(rect)"
+        (childClickedEvent)="childRectClicked($event)"
         [data]="rect"
         class="shape">
     </app-draw-rectangle>

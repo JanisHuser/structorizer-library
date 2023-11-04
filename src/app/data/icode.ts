@@ -4,7 +4,3 @@ export interface ICodeLine {
     children?: boolean;
 }
 
-
-export interface Icode {
-    assembler?: ICodeLine[];
-}
