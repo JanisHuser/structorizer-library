@@ -6,6 +6,7 @@
         <div class="drawing"
             [style.height]="'100px'">
             <app-draw-component
+            (click)="addComponent(component)"
             [component]="component"
             [style.height]="'100px'"
             [style.width]="'70%'"

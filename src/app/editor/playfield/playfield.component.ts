@@ -1,6 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
+import { IComponent } from 'src/app/data/icomponent';
 import { ITabData } from 'src/app/data/tab/itab-data';
 import { ComponentsService } from 'src/app/services/Components/components.service';
+import { ComponentComponent } from 'src/app/draw/component/component.component';
+import { ILanguage } from 'src/app/data/language/ilanguage';
+import { IDrawing } from 'src/app/data/idrawing';
+
+
+class EmptyComponent implements IComponent {
+  title: ILanguage = {
+      en: '',
+      de: ''
+  };
+  description: ILanguage = {
+      en: '',
+      de: ''
+  };
+  acceptsChildren: boolean | undefined;
+  drawing: IDrawing[] | undefined;
+
+  constructor() {
+      // Initialize the properties as needed
+  }
+}
+
 
 @Component({
   selector: 'app-playfield',
@@ -8,7 +31,8 @@ import { ComponentsService } from 'src/app/services/Components/components.servic
   styleUrls: ['./playfield.component.scss']
 })
 export class PlayfieldComponent implements OnInit {
-
+  activeComponentLeft: string = "0px";
+  activeComponentTop: string = "0px";
   tabs: ITabData[] = [
     {
       title: "main",
@@ -20,7 +44,13 @@ export class PlayfieldComponent implements OnInit {
     }
   ];
 
+  @ViewChild('activeComponent') component!: ComponentComponent;
+
   activeTab: ITabData = this.tabs[0];
+  activeComponentValue: IComponent = new EmptyComponent();
+
+  hasActiveComponent: boolean = false
+
   constructor(
     private components: ComponentsService
   ) { }
@@ -73,6 +103,21 @@ export class PlayfieldComponent implements OnInit {
       this.activeTab = tab;
     }
     
+  }
+
+  setComponentActive(component: IComponent) {
+    this.activeComponentValue = component;
+
+    this.hasActiveComponent = true;
+  }
+
+  @HostListener('document:mousemove', ['$event']) 
+  onMouseMove(event: MouseEvent) {
+    if (!this.hasActiveComponent) {
+      return;
+    }
+    this.activeComponentTop = (event.clientY+10) + "px";
+    this.activeComponentLeft = (event.clientX-50) + "px";
   }
 
 }

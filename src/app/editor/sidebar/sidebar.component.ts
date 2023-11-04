@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { IComponent } from 'src/app/data/icomponent';
 import { ComponentsService } from 'src/app/services/Components/components.service';
 import { LanguageService } from 'src/app/services/language/language.service';
@@ -10,6 +10,7 @@ import { LanguageService } from 'src/app/services/language/language.service';
 })
 export class SidebarComponent implements OnInit {
 
+  @Output() componentClickedEvent = new EventEmitter<IComponent>();
   components: IComponent[] = [];
 
   constructor(
@@ -21,4 +22,9 @@ export class SidebarComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  addComponent(component: IComponent) {
+    this.componentClickedEvent.emit(component);
+  }
+
 }

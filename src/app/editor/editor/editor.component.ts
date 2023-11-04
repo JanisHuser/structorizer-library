@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { IComponent } from 'src/app/data/icomponent';
+import { PlayfieldComponent } from '../playfield/playfield.component';
 
 @Component({
   selector: 'app-editor',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditorComponent implements OnInit {
 
+  @ViewChild('playfield') playfield:PlayfieldComponent;
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  showComponent(component: IComponent) {
+    this.playfield.setComponentActive(component);
+  }
 }
