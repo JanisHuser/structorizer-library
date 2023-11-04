@@ -26,9 +26,18 @@
         grid-row: 2;
         padding: 1em;
         border-radius: 4px 4px 0 0;
+        
+        
         .component {
             width: 70%;
             height: 100px;
+        }
+
+        .component-placeholder {
+            width: 70%;
+            height: 100px;
+            background-color: #b2fef7;
+            border: 1px solid black;
         }
     }
 }

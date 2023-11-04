@@ -44,10 +44,7 @@ export class PlayfieldComponent implements OnInit {
   tabs: ITabData[] = [
     {
       title: "main",
-      components:
-      [
-        this.components.getComponents()[0]
-      ],
+      components: [],
       isActive: true
     }
   ];
@@ -126,6 +123,17 @@ export class PlayfieldComponent implements OnInit {
     }
     this.activeComponentTop = (event.clientY+10) + "px";
     this.activeComponentLeft = (event.clientX-50) + "px";
+  }
+
+  placeholderClicked() {
+    if (!this.hasActiveComponent) {
+      return;
+    }
+
+    const clonedComponent = Object.assign({}, this.activeComponentValue);
+    this.activeTab.components.push(clonedComponent)
+
+    this.hasActiveComponent = false;
   }
 
 }
