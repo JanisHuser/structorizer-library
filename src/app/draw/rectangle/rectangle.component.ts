@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { IRectangle } from 'src/app/data/drawing/shapes/irectangle';
 import { DrawBaseClass } from '../draw-base-class';
 
@@ -9,6 +9,7 @@ import { DrawBaseClass } from '../draw-base-class';
 })
 export class RectangleComponent extends DrawBaseClass implements OnInit {
 
+  @Output() childClickedEvent = new EventEmitter();
   @Input() data!: IRectangle;
   constructor() {
     super();
@@ -17,8 +18,8 @@ export class RectangleComponent extends DrawBaseClass implements OnInit {
   ngOnInit(): void {
   }
 
-  containerClicked(event: any) {
-
+  childClicked(event: any) {
+    this.childClickedEvent.emit();
   }
 
 }

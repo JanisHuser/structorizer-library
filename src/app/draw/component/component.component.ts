@@ -1,8 +1,7 @@
-import { AfterViewInit, ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ILine } from 'src/app/data/drawing/iline';
 import { IRectangle } from 'src/app/data/drawing/shapes/irectangle';
 import { IComponent } from 'src/app/data/icomponent';
-import { DrawBaseClass } from '../draw-base-class';
 
 @Component({
   selector: 'app-draw-component',
@@ -11,6 +10,7 @@ import { DrawBaseClass } from '../draw-base-class';
 })
 export class ComponentComponent implements OnInit, AfterViewInit {
 
+  @Output() childAddedEvent = new EventEmitter<IComponent>();
   @Input() component! : IComponent;
 
 
@@ -38,6 +38,24 @@ export class ComponentComponent implements OnInit, AfterViewInit {
       }
     )
     this.changeDetector.detectChanges();
+  }
+
+  childRectClicked(rect: IRectangle) {
+
+    if (this.component.children == undefined) {
+      this.component.children = {};
+    }
+
+
+    const index = this.rectangles.indexOf(rect);
+
+    if ( (index in this.component.children)) {
+      this.component.children[index] = [];
+    }
+    // this.component.children[index].push()
+
+
+    this.childAddedEvent.emit(this.component);
   }
 
 }
