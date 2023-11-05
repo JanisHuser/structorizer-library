@@ -38,7 +38,7 @@ export class TextComponent extends DrawBaseClass implements OnInit {
           if (x.changed == undefined) {
             x.changed = [];
           }
-          x.changed?.push(this.updateText);
+          x.changed?.push(this.updateText.bind(this));
         }
       });
     });
@@ -47,11 +47,7 @@ export class TextComponent extends DrawBaseClass implements OnInit {
   }
 
   updateText() : void {
-    return;
-    //TODO: FIX THIS
     let textCopy = this.data.template!;
-
-
     this.component.inputs!.forEach(input => {
       input.inputs!.forEach(x => {
         textCopy = textCopy.replace("{{" + x.name + "}}", x.value);

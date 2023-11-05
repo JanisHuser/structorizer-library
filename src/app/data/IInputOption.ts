@@ -11,6 +11,7 @@ export interface IInputOption {
     type: InputOptionType;
 
     value: any;
+    options?: any[];
     changed?: (() => void)[];
 }
 

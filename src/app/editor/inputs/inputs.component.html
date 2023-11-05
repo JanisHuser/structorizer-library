@@ -5,6 +5,14 @@ class="config"
 
     <div *ngFor="let input of config.inputs" class="property">
         <div class="key">{{input.description}}</div>
-        <input type="text" value="{{input.value}}" class="value" (change)="onInputChange(input)"/>
+        <app-text-input
+            *ngIf="isText(input)"
+            [input]="input"
+        ></app-text-input>
+
+        <app-dropdown
+            *ngIf="isDropdown(input)"
+            [input]="input"
+        ></app-dropdown>
     </div>
 </div>

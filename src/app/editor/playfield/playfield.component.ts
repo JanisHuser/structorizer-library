@@ -114,8 +114,6 @@ export class PlayfieldComponent implements OnInit {
   setComponentActive(component: IComponent) {
     this.activeComponentValue = component;
 
-    console.log(component)
-
     this.hasActiveComponent = true;
   }
 

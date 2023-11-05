@@ -1,6 +1,6 @@
-import { Component, Input, OnInit, ɵresetJitOptions } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild, ɵresetJitOptions } from '@angular/core';
 import { IComponent } from 'src/app/data/icomponent';
-import { IInputOption } from 'src/app/data/IInputOption';
+import { IInputOption, InputOptionType } from 'src/app/data/IInputOption';
 import { IConfiguration } from 'src/app/data/IInputOption';
 
 @Component({
@@ -10,7 +10,6 @@ import { IConfiguration } from 'src/app/data/IInputOption';
 })
 export class InputsComponent implements OnInit {
   @Input() component?: IComponent;
-
   inputs!: IConfiguration[]
   constructor() { }
 
@@ -23,9 +22,13 @@ export class InputsComponent implements OnInit {
     }
   }
 
-  onInputChange(option: IInputOption) : void {
-    option.changed!.forEach(x=> {
-      x();
-    });
+  
+
+  isText(option: IInputOption) : boolean {
+    return option.type == InputOptionType.text;
+  }
+
+  isDropdown(option: IInputOption) : boolean {
+    return option.type == InputOptionType.dropdown;
   }
 }

@@ -31,14 +31,17 @@ const assemblerComponents = (): IComponent[] => {
             {
               description: "Name",
               name: "LITERAL_NAME",
-              type: InputOptionType.text,
-              value: ""
+              type: InputOptionType.dropdown,
+              value: "R1",
+              options: [
+                "R1", "R2", "R3", "R4", "R5", "R6", "R7", "R8"
+              ]
             },
             {
               description: "Value",
               name: "LITERAL_VALUE",
               type: InputOptionType.hex_value,
-              value: ""
+              value: "#0x00"
             },
           ]
         }

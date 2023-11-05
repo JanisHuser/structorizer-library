@@ -8,6 +8,8 @@ import { EditorComponent } from './editor/editor.component';
 import { PlayfieldComponent } from './playfield/playfield.component';
 import { TabComponent } from './tab/tab.component';
 import { InputsComponent } from './inputs/inputs.component';
+import { TextInputComponent } from './inputs/text-input/text-input.component';
+import { DropdownComponent } from './inputs/dropdown/dropdown.component';
 
 
 @NgModule({
@@ -17,6 +19,8 @@ import { InputsComponent } from './inputs/inputs.component';
     PlayfieldComponent,
     TabComponent,
     InputsComponent,
+    TextInputComponent,
+    DropdownComponent,
   ],
   imports: [
     CommonModule,
