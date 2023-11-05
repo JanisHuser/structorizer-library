@@ -21,7 +21,8 @@
                     [component]="component"
                     [style.width]="'300px'"
                     [style.height]="'300px'"
-                    (mousedown)="componentSelected(component)">
+                    (mousedown)="componentSelected(component)"
+                    (touchDown)="componentSelected(component)">
                 </app-draw-component>
                 </div>
             </div>

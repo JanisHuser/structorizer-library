@@ -116,9 +116,21 @@ export class PlayfieldComponent implements OnInit {
 
     this.hasActiveComponent = true;
   }
+  dropComponent() {
+    this.hasActiveComponent = false;
+  }
 
   @HostListener('document:mousemove', ['$event']) 
   onMouseMove(event: MouseEvent) {
+    if (!this.hasActiveComponent) {
+      return;
+    }
+    this.activeComponentTop = (event.clientY+10) + "px";
+    this.activeComponentLeft = (event.clientX-50) + "px";
+  }
+
+  @HostListener('document:touchMove', ['$event']) 
+  onTouchMove(event: MouseEvent) {
     if (!this.hasActiveComponent) {
       return;
     }
@@ -138,7 +150,9 @@ export class PlayfieldComponent implements OnInit {
   }
 
   componentSelected(component: IComponent) {
-
+    if (this.hasActiveComponent) {
+      return;
+    }
     if (this.selectedComponent == component) {
       this.selectedComponent = undefined;
     } else {

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
 import { IComponent } from 'src/app/data/icomponent';
 import { PlayfieldComponent } from '../playfield/playfield.component';
 
@@ -17,5 +17,25 @@ export class EditorComponent implements OnInit {
 
   showComponent(component: IComponent) {
     this.playfield.setComponentActive(component);
+  }
+
+  
+
+  @HostListener('document:keydown', ['$event'])
+  handleKeyboardEvent(event: KeyboardEvent) {
+    console.log(event)
+    
+    if (event.key === 'Escape') {
+      this.playfield.dropComponent();
+    }
+  }
+
+  @HostListener('document:touchend', ['$event'])
+  handleTouchEndEvent(event: KeyboardEvent) {
+    console.log(event)
+    
+    if (event.key === 'Escape') {
+      this.playfield.dropComponent();
+    }
   }
 }
