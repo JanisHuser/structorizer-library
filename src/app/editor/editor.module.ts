@@ -28,7 +28,8 @@ import { DropdownComponent } from './inputs/dropdown/dropdown.component';
     DrawModule
   ],
   exports: [
-    EditorRoutingModule
+    EditorRoutingModule,
+    EditorComponent
   ]
 })
 export class EditorModule { }

@@ -1,10 +1,10 @@
 <div class="view">
     <app-navigation-bar
+        (codeExportEvent)="codeExportEvent()"
         class="navigation">
     </app-navigation-bar>
 
-    <div class="outlet">
-        <router-outlet></router-outlet>
-    </div>
+    <app-editor #editor></app-editor>
+
 </div>
 

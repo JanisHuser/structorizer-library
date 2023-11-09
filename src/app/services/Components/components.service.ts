@@ -12,7 +12,7 @@ const assemblerComponents = (): IComponent[] => {
     {
       code: {
         assembler: [
-          { "children": false, "instruction": "LDR R1,=LITERAL"}
+          { "children": false, "instruction": "LDR {{LITERAL_NAME}},={{LITERAL_VALUE}}"}
         ]
       },
       title: {

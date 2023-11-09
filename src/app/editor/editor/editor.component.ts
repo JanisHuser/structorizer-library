@@ -1,5 +1,6 @@
 import { Component, HostListener, OnInit, ViewChild } from '@angular/core';
 import { IComponent } from 'src/app/data/icomponent';
+import { ITabData } from 'src/app/data/tab/itab-data';
 import { PlayfieldComponent } from '../playfield/playfield.component';
 
 @Component({
@@ -19,7 +20,9 @@ export class EditorComponent implements OnInit {
     this.playfield.setComponentActive(component);
   }
 
-  
+  getTabData(): ITabData[] {
+    return this.playfield.tabs;
+  }
 
   @HostListener('document:keydown', ['$event'])
   handleKeyboardEvent(event: KeyboardEvent) {

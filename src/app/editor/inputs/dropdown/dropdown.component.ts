@@ -22,6 +22,10 @@ export class DropdownComponent implements OnInit {
   onChange() : void {
     this.input.value = this.select.nativeElement.value;
     this.input.changed!.forEach(x=> {
+
+      if (x === null) {
+        return;
+      }
       x();
     });
   }

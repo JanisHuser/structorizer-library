@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output , EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-navigation-bar',
@@ -6,6 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navigation-bar.component.scss']
 })
 export class NavigationBarComponent implements OnInit {
+
+  @Output() importEvent = new EventEmitter();
+  @Output() exportEvent = new EventEmitter();
+  @Output() codeExportEvent = new EventEmitter();
 
   constructor() { }
 
@@ -25,7 +29,7 @@ export class NavigationBarComponent implements OnInit {
   }
   
   createCode() {
-
+    this.codeExportEvent.emit();
   }
 
 }

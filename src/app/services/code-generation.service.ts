@@ -82,6 +82,8 @@ export class CodeGenerationService {
       let key = `{{${k}}}`;
 
       line = line.replace(key, inputs[k]);
+
+      console.log(line)
     });
 
 
