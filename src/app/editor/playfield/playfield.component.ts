@@ -3,9 +3,7 @@ import { IComponent } from 'src/app/data/icomponent';
 import { ITabData } from 'src/app/data/tab/itab-data';
 import { ComponentsService } from 'src/app/services/Components/components.service';
 import { ComponentComponent } from 'src/app/draw/component/component.component';
-import { ILanguage } from 'src/app/data/language/ilanguage';
 import { IDrawing } from 'src/app/data/idrawing';
-import { ICodeLine } from 'src/app/data/icode';
 import { IConfiguration } from 'src/app/data/IInputOption';
 
 
@@ -26,7 +24,7 @@ class EmptyComponent implements IComponent {
   constructor() {
       // Initialize the properties as needed
   }
-  languages = {};
+  code = {};
   
   children?: { [index: number]: IComponent[]; } | undefined;
   inputs?: IConfiguration[] | undefined;

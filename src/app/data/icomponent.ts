@@ -8,7 +8,7 @@ export interface IComponent {
     description: {[lang: string]: string};
     acceptsChildren?: boolean;
     drawing?: IDrawing[];
-    languages: {[lang: string]: ICodeLine[]};
+    code: {[lang: string]: ICodeLine[]};
 
     children?: {[index: number]: IComponent[] };
     inputs?: IConfiguration[];

@@ -10,7 +10,7 @@ import { bindCallback } from 'rxjs';
 const assemblerComponents = (): IComponent[] => {
   return [
     {
-      languages: {
+      code: {
         assembler: [
           { "children": false, "instruction": "LDR R1,=LITERAL"}
         ]
@@ -71,9 +71,9 @@ const assemblerComponents = (): IComponent[] => {
       height: "50px"
     },
     {
-      languages: {
+      code: {
         assembler: [
-          { "children": false, "instruction": "LDR R1,=LITERAL"}
+          { "children": false, "instruction": "LDR {{LITERAL_NAME}},={{LITERAL_VALUE}}"}
         ]
       },
       title: {
@@ -108,48 +108,6 @@ export class ComponentsService {
   getComponents() : IComponent[] {
 
     return assemblerComponents();
-    return [
-      // {
-      //   title: {
-      //     en: "While loop",
-      //     de: "While Schleife"
-      //   },
-      //   description: {
-      //     de: "Beschreibung",
-      //     en: "Description"
-      //   },
-      //   acceptsChildren: true,
-      //   drawing: [
-      //     {
-      //       rectangle: {
-      //         border: {
-      //           width: '1px',
-      //           color: "#000",
-      //           style: BorderStyle.solid
-      //         },
-      //         left: "0px",
-      //         top: "0px",
-      //         right: "0px",
-      //         bottom: "0px",
-      //       }
-      //     },
-      //     {
-      //       rectangle: {
-      //         border: {
-      //           width: '1px',
-      //           color: "#000",
-      //           style: BorderStyle.solid
-      //         },
-      //         left: "20px",
-      //         top: "20px",
-      //         right: "0px",
-      //         bottom: "20px",
-      //         acceptsChildren: true,
-      //       }
-      //     }
-      //   ]
-      // },
-    ];
     // this.httpClient.get<IResponse<IComponent[]>>('/components/').subscribe(
     //   data => {
     //     return data.data;
