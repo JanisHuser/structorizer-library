@@ -13,6 +13,7 @@ export interface IInputOption {
     value: any;
     options?: any[];
     changed?: (() => void)[];
+    store?: string;
 }
 
 export interface IConfiguration {

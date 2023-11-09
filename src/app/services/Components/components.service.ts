@@ -31,11 +31,9 @@ const assemblerComponents = (): IComponent[] => {
             {
               description: "Name",
               name: "LITERAL_NAME",
-              type: InputOptionType.dropdown,
-              value: "R1",
-              options: [
-                "R1", "R2", "R3", "R4", "R5", "R6", "R7", "R8"
-              ]
+              type: InputOptionType.text,
+              value: "",
+              store: "literals"
             },
             {
               description: "Value",
@@ -64,7 +62,7 @@ const assemblerComponents = (): IComponent[] => {
           text: {
             x: "0px",
             y: "0px",
-            template: "Load {{LITERAL_VALUE}} into {{LITERAL_NAME}}"
+            template: "Define {{LITERAL_NAME}} as {{LITERAL_VALUE}}"
           }
         }
       ],
@@ -73,7 +71,8 @@ const assemblerComponents = (): IComponent[] => {
     {
       code: {
         assembler: [
-          { "children": false, "instruction": "LDR {{LITERAL_NAME}},={{LITERAL_VALUE}}"}
+          { "children": false, "instruction": "LDR {{LITERAL_NAME}},={{LITERAL_VALUE}}"},
+          { "children": false, "instruction": "LDR {{LITERAL_NAME}},({{LITERAL_NAME}})"}
         ]
       },
       title: {
