@@ -12,4 +12,6 @@ export interface IComponent {
 
     children?: {[index: number]: IComponent[] };
     inputs?: IConfiguration[];
+
+    height?: string;
 }

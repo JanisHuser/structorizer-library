@@ -55,6 +55,7 @@ export class PlayfieldComponent implements OnInit {
   activeComponentValue: IComponent = new EmptyComponent();
   selectedComponent?: IComponent = undefined;
 
+
   hasActiveComponent: boolean = false
 
   constructor(
@@ -158,7 +159,28 @@ export class PlayfieldComponent implements OnInit {
     } else {
       this.selectedComponent = component;
     }
-    
+ 
   }
+
+
+  childAfterInsert(index: number) {
+    this.insertChild(index+1);
+  }
+
+  childPreInsert(index: number) {
+    this.insertChild(index);
+  }
+
+  insertChild(index: number) {
+    if (this.activeTab.components.length > index) {
+      this.activeTab.components.splice(index, 0, this.activeComponentValue);
+    } else {
+      this.activeTab.components.push(this.activeComponentValue);
+    }
+
+    
+    this.hasActiveComponent = false;
+  }
+
 
 }

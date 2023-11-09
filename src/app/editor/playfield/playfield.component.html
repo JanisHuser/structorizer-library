@@ -16,13 +16,18 @@
             <div class="components"
             *ngIf="activeTab.components.length > 0">
             <div class="component"
-                *ngFor="let component of activeTab.components">
+                *ngFor="let component of activeTab.components; index as i">
                 <app-draw-component
                     [component]="component"
+                    [displayOnly]="false"
+                    [showInsert]="hasActiveComponent"
                     [style.width]="'300px'"
                     [style.height]="'300px'"
                     (mousedown)="componentSelected(component)"
-                    (touchDown)="componentSelected(component)">
+                    (touchDown)="componentSelected(component)"
+                    (childAfterInsertEvent)="childAfterInsert(i)"
+                    (childPreInsertEvent)="childPreInsert(i)"
+                    >
                 </app-draw-component>
                 </div>
             </div>

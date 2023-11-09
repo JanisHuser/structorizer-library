@@ -1,6 +1,8 @@
-<div
-class="drawing">
-    <app-draw-rectangle
+
+<div class="drawing" (mouseover)="mouseOver = true" (mouseleave)="mouseOver = false">
+    <div class="pre-insert" *ngIf="mouseOver && !displayOnly && showInsert" (mouseup)="preMouseUp()"></div>
+    <div class="container" [ngStyle]="{'height': component.height}">
+        <app-draw-rectangle
         *ngFor="let rect of rectangles"
         (childClickedEvent)="childRectClicked($event)"
         [data]="rect"
@@ -13,4 +15,8 @@ class="drawing">
         [data]="text"
         class="text">
         </app-text>
+    </div>
+    
+
+    <div class="after-insert" *ngIf="mouseOver && !displayOnly && showInsert" (mouseup)="afterMouseUp()"></div>
 </div>

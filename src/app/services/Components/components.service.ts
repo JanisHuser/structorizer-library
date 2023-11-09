@@ -40,7 +40,7 @@ const assemblerComponents = (): IComponent[] => {
             {
               description: "Value",
               name: "LITERAL_VALUE",
-              type: InputOptionType.hex_value,
+              type: InputOptionType.text,
               value: "#0x00"
             },
           ]
@@ -67,7 +67,8 @@ const assemblerComponents = (): IComponent[] => {
             template: "Load {{LITERAL_VALUE}} into {{LITERAL_NAME}}"
           }
         }
-      ]
+      ],
+      height: "50px"
     },
     {
       languages: {

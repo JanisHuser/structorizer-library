@@ -4,6 +4,8 @@ import { IRectangle } from 'src/app/data/drawing/shapes/irectangle';
 import { IText } from 'src/app/data/drawing/text/itext';
 import { IComponent } from 'src/app/data/icomponent';
 
+
+
 @Component({
   selector: 'app-draw-component',
   templateUrl: './component.component.html',
@@ -12,12 +14,20 @@ import { IComponent } from 'src/app/data/icomponent';
 export class ComponentComponent implements OnInit, AfterViewInit {
 
   @Output() childAddedEvent = new EventEmitter<IComponent>();
+  @Output() childPreInsertEvent = new EventEmitter<ComponentComponent>();
+  @Output() childAfterInsertEvent = new EventEmitter<ComponentComponent>();
+
+  @Input() displayOnly: boolean = false;
+  @Input() showInsert: boolean = false;
   @Input() component! : IComponent;
+  
 
 
   rectangles: IRectangle[] = [];
   lines: ILine[] = [];
   texts: IText[] = [];
+
+  mouseOver: boolean = false;
   constructor(
     private changeDetector: ChangeDetectorRef
   ) { }
@@ -49,7 +59,9 @@ export class ComponentComponent implements OnInit, AfterViewInit {
   }
 
   childRectClicked(rect: IRectangle) {
-
+    if (this.displayOnly) {
+      return;
+    }
     if (this.component.children == undefined) {
       this.component.children = {};
     }
@@ -66,4 +78,11 @@ export class ComponentComponent implements OnInit, AfterViewInit {
     this.childAddedEvent.emit(this.component);
   }
 
+  preMouseUp() {
+    this.childPreInsertEvent.emit(this);
+  }
+
+  afterMouseUp() {
+    this.childAfterInsertEvent.emit(this);
+  }
 }
