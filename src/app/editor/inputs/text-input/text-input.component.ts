@@ -17,10 +17,11 @@ export class TextInputComponent implements OnInit {
   }
 
   onInputChange(option: IInputOption) : void {
-
     option.value = this.textInput.nativeElement.value;
     option.changed!.forEach(x=> {
-      x();
+      if (x != null) {
+        x();
+      }
     });
   }
 

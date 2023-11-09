@@ -25,7 +25,9 @@ export class SidebarComponent implements OnInit {
 
   addComponent(component: IComponent) {
 
-    this.componentClickedEvent.emit(component);
+    const copy = JSON.parse(JSON.stringify(component)) as typeof component;
+
+    this.componentClickedEvent.emit(copy as IComponent);
   }
 
 }
