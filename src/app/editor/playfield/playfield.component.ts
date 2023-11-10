@@ -65,12 +65,10 @@ export class PlayfieldComponent implements OnInit {
 
   removeTab(tab: ITabData) {
     if (this.tabs.length == 1) {
-      //TODO: show message, last tab cannot be deleted
       alert("last tab cannot be deleted");
       return;
     }
     if (!this.tabs.includes(tab)) {
-      //TODO: show message, invalid tab
       alert("invalid tab");
       return;
     }
@@ -112,7 +110,6 @@ export class PlayfieldComponent implements OnInit {
 
   setComponentActive(component: IComponent) {
     this.activeComponentValue = component;
-
     this.hasActiveComponent = true;
   }
   dropComponent() {
@@ -149,9 +146,6 @@ export class PlayfieldComponent implements OnInit {
   }
 
   componentSelected(component: IComponent) {
-    if (this.hasActiveComponent) {
-      return;
-    }
     if (this.selectedComponent == component) {
       this.selectedComponent = undefined;
     } else {
@@ -175,10 +169,6 @@ export class PlayfieldComponent implements OnInit {
     } else {
       this.activeTab.components.push(this.activeComponentValue);
     }
-
-    
     this.hasActiveComponent = false;
   }
-
-
 }

@@ -71,17 +71,63 @@ const assemblerComponents = (): IComponent[] => {
     {
       code: {
         assembler: [
-          { "children": false, "instruction": "LDR {{LITERAL_NAME}},={{LITERAL_VALUE}}"},
-          { "children": false, "instruction": "LDR {{LITERAL_NAME}},({{LITERAL_NAME}})"}
+          { "children": false, "instruction": "LDR {{REGISTER}},={{LITERAL_NAME}}"},
+          { "children": false, "instruction": "LDR {{REGISTER}},({{REGISTER}})"},
         ]
       },
       title: {
-        "de": "Load Value from literal address"
+        "de": "Load Literal Value"
       },
       description: {
-        "de": "Loads a Value from a literal"
+        "de": "Load Literal Value"
       },
-      acceptsChildren: false
+      acceptsChildren: false,
+      inputs: [
+        {
+          header: {
+            de: "Define literal (#define NAME VALUE)"
+          },
+          inputs: [
+            {
+              description: "Name",
+              name: "LITERAL_NAME",
+              type: InputOptionType.dropdown,
+              value: "",
+              store: "literals"
+            },
+            {
+              description: "Value",
+              name: "REGISTER",
+              type: InputOptionType.dropdown,
+              value: "R1",
+              options: ["R1","R2", "R3", "R4", "R5", "R6", "R7", "R8"]
+            },
+          ]
+        }
+      ],
+      drawing: [
+        {
+          rectangle: {
+            border: {
+              width: '1px',
+              color: "#000",
+              style: BorderStyle.solid
+            },
+            left: "0px",
+            top: "0px",
+            right: "0px",
+            bottom: "0px",
+          }
+        },
+        {
+          text: {
+            x: "0px",
+            y: "0px",
+            template: "Load Value from {{LITERAL_NAME}} into {{REGISTER}}"
+          }
+        }
+      ],
+      height: "50px"
     },
     
   ]

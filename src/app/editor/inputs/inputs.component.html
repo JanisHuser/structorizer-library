@@ -8,11 +8,13 @@ class="config"
         <app-text-input
             *ngIf="isText(input)"
             [input]="input"
+            [configuration]="config"
         ></app-text-input>
 
         <app-dropdown
             *ngIf="isDropdown(input)"
             [input]="input"
+            [configuration]="config"
         ></app-dropdown>
     </div>
 </div>
