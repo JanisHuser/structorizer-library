@@ -1,20 +1,22 @@
-<div
-class="config"
-*ngFor="let config of inputs">
-    <div class="header">{{config.header["de"]}}</div>
+<table>
 
-    <div *ngFor="let input of config.inputs" class="property">
-        <div class="key">{{input.description}}</div>
-        <app-text-input
+    <tr>
+        <th>Name</th>
+        <th>Value</th>
+    </tr>
+
+    <tr *ngFor="let input of component?.inputs">
+        <td>{{ input.description }}</td>
+        <td>
+            <app-text-input
             *ngIf="isText(input)"
             [input]="input"
-            [configuration]="config"
         ></app-text-input>
 
         <app-dropdown
             *ngIf="isDropdown(input)"
             [input]="input"
-            [configuration]="config"
         ></app-dropdown>
-    </div>
-</div>
+        </td>
+    </tr>
+</table>

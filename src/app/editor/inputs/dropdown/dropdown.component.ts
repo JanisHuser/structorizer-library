@@ -1,5 +1,5 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
-import { IConfiguration, IInputOption } from 'src/app/data/IInputOption';
+import { IInputOption } from 'src/app/data/IInputOption';
 import { StoreService } from 'src/app/services/Store/store.service';
 
 @Component({
@@ -10,7 +10,6 @@ import { StoreService } from 'src/app/services/Store/store.service';
 export class DropdownComponent implements OnInit {
 
   @Input() input!: IInputOption;
-  @Input() configuration!: IConfiguration;
   @ViewChild('select') select!: ElementRef;
 
   options!: any[];
@@ -22,15 +21,13 @@ export class DropdownComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    this.storeService.addOption(this.input);
     if (this.input.store != null) {
       this.options = this.storeService.getOptions(this.input.store);
     }
     else {
       this.options = this.input.options!;
     }
-
-    
   }
 
   onChange() : void {

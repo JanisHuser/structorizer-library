@@ -1,6 +1,6 @@
 import { ICodeLine } from "./icode";
 import { IDrawing } from "./idrawing";
-import { IConfiguration, IInputOption } from "./IInputOption";
+import {  IInputOption } from "./IInputOption";
 import { ILanguage } from "./language/ilanguage";
 
 export interface IComponent {
@@ -10,8 +10,8 @@ export interface IComponent {
     drawing?: IDrawing[];
     code: {[lang: string]: ICodeLine[]};
 
-    children?: {[index: number]: IComponent[] };
-    inputs?: IConfiguration[];
+    children?: {[index: number]: IComponent };
+    inputs?: IInputOption[];
 
     height?: string;
 }

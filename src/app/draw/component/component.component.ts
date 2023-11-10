@@ -69,9 +69,9 @@ export class ComponentComponent implements OnInit, AfterViewInit {
 
     const index = this.rectangles.indexOf(rect);
 
-    if ( (index in this.component.children)) {
-      this.component.children[index] = [];
-    }
+    // if ( (index in this.component.children)) {
+    //   this.component.children[index] = null;
+    // }
     // this.component.children[index].push()
 
 

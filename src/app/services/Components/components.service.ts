@@ -12,7 +12,7 @@ const assemblerComponents = (): IComponent[] => {
     {
       code: {
         assembler: [
-          { "children": false, "instruction": "LDR {{LITERAL_NAME}},={{LITERAL_VALUE}}"}
+          { "children": false, "instruction": "{{LITERAL_NAME}}           EQU     {{LITERAL_VALUE}}"}
         ]
       },
       title: {
@@ -22,27 +22,20 @@ const assemblerComponents = (): IComponent[] => {
         "de": "Define literal"
       },
       acceptsChildren: false,
-      inputs: [
+       inputs: [
         {
-          header: {
-            de: "Define literal (#define NAME VALUE)"
-          },
-          inputs: [
-            {
-              description: "Name",
-              name: "LITERAL_NAME",
-              type: InputOptionType.text,
-              value: "",
-              store: "literals"
-            },
-            {
-              description: "Value",
-              name: "LITERAL_VALUE",
-              type: InputOptionType.text,
-              value: "#0x00"
-            },
-          ]
-        }
+          description: "Name of Constant",
+          name: "LITERAL_NAME",
+          type: InputOptionType.text,
+          value: "",
+          store: "literals"
+        },
+        {
+          description: "Value of Constant",
+          name: "LITERAL_VALUE",
+          type: InputOptionType.text,
+          value: "#0x00"
+        },
       ],
       drawing: [
         {
@@ -84,26 +77,19 @@ const assemblerComponents = (): IComponent[] => {
       acceptsChildren: false,
       inputs: [
         {
-          header: {
-            de: "Define literal (#define NAME VALUE)"
-          },
-          inputs: [
-            {
-              description: "Name",
-              name: "LITERAL_NAME",
-              type: InputOptionType.dropdown,
-              value: "",
-              store: "literals"
-            },
-            {
-              description: "Value",
-              name: "REGISTER",
-              type: InputOptionType.dropdown,
-              value: "R1",
-              options: ["R1","R2", "R3", "R4", "R5", "R6", "R7", "R8"]
-            },
-          ]
-        }
+          description: "Name",
+          name: "LITERAL_NAME",
+          type: InputOptionType.dropdown,
+          value: "",
+          store: "literals"
+        },
+        {
+          description: "Value",
+          name: "REGISTER",
+          type: InputOptionType.dropdown,
+          value: "R1",
+          options: ["R1","R2", "R3", "R4", "R5", "R6", "R7", "R8"]
+        },
       ],
       drawing: [
         {

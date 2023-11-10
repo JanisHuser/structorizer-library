@@ -1,7 +1,6 @@
 import { Component, ElementRef, Input, OnInit, ViewChild, ɵresetJitOptions } from '@angular/core';
 import { IComponent } from 'src/app/data/icomponent';
 import { IInputOption, InputOptionType } from 'src/app/data/IInputOption';
-import { IConfiguration } from 'src/app/data/IInputOption';
 
 @Component({
   selector: 'app-inputs',
@@ -10,16 +9,12 @@ import { IConfiguration } from 'src/app/data/IInputOption';
 })
 export class InputsComponent implements OnInit {
   @Input() component?: IComponent;
-  inputs!: IConfiguration[]
   constructor() { }
 
+  language: string = "de";
+
   ngOnInit(): void {
-    if (this.component!.inputs == undefined) {
-      this.inputs = [];
-    }
-    else {
-      this.inputs = this.component!.inputs;
-    }
+    
   }
 
   

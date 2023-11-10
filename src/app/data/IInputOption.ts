@@ -15,8 +15,3 @@ export interface IInputOption {
     changed?: (() => void)[];
     store?: string;
 }
-
-export interface IConfiguration {
-    header: {[lang: string]: string};
-    inputs: IInputOption[];
-}

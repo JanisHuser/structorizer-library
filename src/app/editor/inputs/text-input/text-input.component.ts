@@ -1,5 +1,5 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
-import { IConfiguration, IInputOption } from 'src/app/data/IInputOption';
+import { IInputOption } from 'src/app/data/IInputOption';
 import { StoreService } from 'src/app/services/Store/store.service';
 
 @Component({
@@ -10,7 +10,6 @@ import { StoreService } from 'src/app/services/Store/store.service';
 export class TextInputComponent implements OnInit {
 
   @Input() input!: IInputOption;
-  @Input() configuration!: IConfiguration;
 
   @ViewChild('textInput') textInput!: ElementRef;
   

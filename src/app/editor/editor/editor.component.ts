@@ -26,8 +26,6 @@ export class EditorComponent implements OnInit {
 
   @HostListener('document:keydown', ['$event'])
   handleKeyboardEvent(event: KeyboardEvent) {
-    console.log(event)
-    
     if (event.key === 'Escape') {
       this.playfield.dropComponent();
     }
@@ -35,8 +33,6 @@ export class EditorComponent implements OnInit {
 
   @HostListener('document:touchend', ['$event'])
   handleTouchEndEvent(event: KeyboardEvent) {
-    console.log(event)
-    
     if (event.key === 'Escape') {
       this.playfield.dropComponent();
     }

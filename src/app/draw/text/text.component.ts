@@ -1,7 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { IText } from 'src/app/data/drawing/text/itext';
 import { IComponent } from 'src/app/data/icomponent';
-import { IConfiguration, IInputOption } from 'src/app/data/IInputOption';
 import { DrawBaseClass } from '../draw-base-class';
 
 @Component({
@@ -31,16 +30,14 @@ export class TextComponent extends DrawBaseClass implements OnInit {
     }
 
     this.component.inputs!.forEach(input => {
-      input.inputs!.forEach(x => {
-        const key = "{{" + x.name + "}}";
-        if (this.data.template!.includes(key)) {
+      const key = "{{" + input.name + "}}";
+      if (this.data.template!.includes(key)) {
 
-          if (x.changed == undefined) {
-            x.changed = [];
-          }
-          x.changed?.push(this.updateText.bind(this));
+        if (input.changed == undefined) {
+          input.changed = [];
         }
-      });
+        input.changed?.push(this.updateText.bind(this));
+      }
     });
 
     this.updateText();
@@ -49,9 +46,10 @@ export class TextComponent extends DrawBaseClass implements OnInit {
   updateText() : void {
     let textCopy = this.data.template!;
     this.component.inputs!.forEach(input => {
-      input.inputs!.forEach(x => {
-        textCopy = textCopy.replace("{{" + x.name + "}}", x.value);
-      });
+      const key = `{{${input.name}}}`;
+      while (textCopy.includes(key)) {
+        textCopy = textCopy.replace(key, input.value);
+      }
     });
 
     this.text = textCopy;

@@ -4,7 +4,8 @@ import { ITabData } from 'src/app/data/tab/itab-data';
 import { ComponentsService } from 'src/app/services/Components/components.service';
 import { ComponentComponent } from 'src/app/draw/component/component.component';
 import { IDrawing } from 'src/app/data/idrawing';
-import { IConfiguration } from 'src/app/data/IInputOption';
+import { IInputOption } from 'src/app/data/IInputOption';
+
 
 
 class EmptyComponent implements IComponent {
@@ -26,8 +27,8 @@ class EmptyComponent implements IComponent {
   }
   code = {};
   
-  children?: { [index: number]: IComponent[]; } | undefined;
-  inputs?: IConfiguration[] | undefined;
+  children?: { [index: number]: IComponent; } | undefined;
+  inputs?: IInputOption[] | undefined;
 }
 
 
