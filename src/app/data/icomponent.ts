@@ -5,7 +5,6 @@ import { ILanguage } from "./language/ilanguage";
 
 export interface IComponent {
     title: {[lang: string]: string};
-    description: {[lang: string]: string};
     acceptsChildren?: boolean;
     drawing?: IDrawing[];
     code: {[lang: string]: ICodeLine[]};

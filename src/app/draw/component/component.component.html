@@ -9,6 +9,12 @@
         class="shape">
     </app-draw-rectangle>
 
+    <app-draw-line
+    *ngFor="let line of lines"
+    [data]="line"
+    class="shape">
+    </app-draw-line>
+
     <app-text
         *ngFor="let text of texts"
         [component]="component"

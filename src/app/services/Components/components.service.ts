@@ -18,9 +18,6 @@ const assemblerComponents = (): IComponent[] => {
       title: {
         "de": "Define literal"
       },
-      description: {
-        "de": "Define literal"
-      },
       acceptsChildren: false,
        inputs: [
         {
@@ -52,6 +49,24 @@ const assemblerComponents = (): IComponent[] => {
           }
         },
         {
+          rectangle: {
+            left: "0px",
+            top: "50px",
+            right: "50px",
+            bottom: "0px",
+            acceptsChildren: true         
+          },
+        },
+        {
+          rectangle: {
+            left: "50px",
+            top: "50px",
+            right: "0px",
+            bottom: "0px",
+            acceptsChildren: true
+          },
+        },
+        {
           text: {
             x: "0px",
             y: "0px",
@@ -69,9 +84,6 @@ const assemblerComponents = (): IComponent[] => {
         ]
       },
       title: {
-        "de": "Load Literal Value"
-      },
-      description: {
         "de": "Load Literal Value"
       },
       acceptsChildren: false,
@@ -115,7 +127,77 @@ const assemblerComponents = (): IComponent[] => {
       ],
       height: "50px"
     },
-    
+    {
+      title: {
+        "de": "If / else statement"
+      },
+      acceptsChildren: false,
+      drawing: [
+        {
+          rectangle: {
+            border: {
+              width: '1px',
+              color: "#000",
+              style: BorderStyle.solid
+            },
+            left: "0px",
+            top: "0px",
+            right: "0px",
+            bottom: "0px",
+          }
+        },
+        {
+          line: {
+            x1: "0",
+            y1: "0",
+            x2: "50",
+            y2: "50",
+            line: {
+              width: '1px',
+              color: "#000",
+              style: BorderStyle.solid
+            }
+          }
+        },
+        {
+          line: {
+            x1: "50",
+            y1: "50",
+            x2: "100",
+            y2: "0",
+            line: {
+              width: '1px',
+              color: "#000",
+              style: BorderStyle.solid
+            }
+          }
+        },
+        {
+          line: {
+            x1: "50",
+            y1: "50",
+            x2: "50",
+            y2: "100",
+            line: {
+              width: '1',
+              color: "#000",
+              style: BorderStyle.solid
+            }
+          }
+        },
+        {
+          text: {
+            x: "0px",
+            y: "0px",
+            template: "yeah"
+          }
+        }
+      ],
+      height: "50px",
+      code: {
+        "assembler": []
+      }
+    }
   ]
 };
 
