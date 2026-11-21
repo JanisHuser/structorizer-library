@@ -1,0 +1,77 @@
+{
+  "app": "structorizer",
+  "version": 2,
+  "project": {
+    "title": "Largest of three",
+    "auto": false,
+    "active": 0,
+    "diagrams": [
+      {
+        "name": "Main",
+        "auto": false,
+        "body": [
+          {
+            "type": "instruction",
+            "text": "a = int(input(\"a = \"))\nb = int(input(\"b = \"))\nc = int(input(\"c = \"))",
+            "id": "yjap66bo",
+            "auto": false
+          },
+          {
+            "type": "if",
+            "text": "a >= b",
+            "yes": [
+              {
+                "type": "if",
+                "text": "a >= c",
+                "yes": [
+                  {
+                    "type": "instruction",
+                    "text": "print(a)",
+                    "id": "jp5i4q6z",
+                    "auto": false
+                  }
+                ],
+                "no": [
+                  {
+                    "type": "instruction",
+                    "text": "print(c)",
+                    "id": "iwnjt03n",
+                    "auto": false
+                  }
+                ],
+                "id": "m4n2fnh8",
+                "auto": false
+              }
+            ],
+            "no": [
+              {
+                "type": "if",
+                "text": "b >= c",
+                "yes": [
+                  {
+                    "type": "instruction",
+                    "text": "print(b)",
+                    "id": "dj8n3qjr",
+                    "auto": false
+                  }
+                ],
+                "no": [
+                  {
+                    "type": "instruction",
+                    "text": "print(c)",
+                    "id": "i2be2pzh",
+                    "auto": false
+                  }
+                ],
+                "id": "knvq5pc6",
+                "auto": false
+              }
+            ],
+            "id": "nhjgxnag",
+            "auto": false
+          }
+        ]
+      }
+    ]
+  }
+}

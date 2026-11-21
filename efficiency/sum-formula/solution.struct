@@ -1,0 +1,29 @@
+{
+  "app": "structorizer",
+  "version": 2,
+  "project": {
+    "title": "Sum 1 to n – without a loop",
+    "auto": false,
+    "active": 0,
+    "diagrams": [
+      {
+        "name": "Main",
+        "auto": false,
+        "body": [
+          {
+            "type": "instruction",
+            "text": "n = int(input(\"n = \"))",
+            "id": "1gwr0yse",
+            "auto": false
+          },
+          {
+            "type": "instruction",
+            "text": "print(n * (n + 1) / 2)",
+            "id": "14kjzv16",
+            "auto": false
+          }
+        ]
+      }
+    ]
+  }
+}

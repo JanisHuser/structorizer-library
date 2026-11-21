@@ -1,0 +1,86 @@
+{
+  "app": "structorizer",
+  "version": 2,
+  "project": {
+    "title": "Guess the number",
+    "auto": false,
+    "active": 0,
+    "diagrams": [
+      {
+        "name": "Main",
+        "auto": false,
+        "body": [
+          {
+            "type": "instruction",
+            "text": "secret = int(Math.random() * 100) + 1",
+            "id": "dj3rh3zp",
+            "auto": false
+          },
+          {
+            "type": "instruction",
+            "text": "tries = 0",
+            "id": "lxosae0v",
+            "auto": false
+          },
+          {
+            "type": "dowhile",
+            "text": "guess != secret",
+            "body": [
+              {
+                "type": "instruction",
+                "text": "guess = int(input(\"Guess (1-100): \"))",
+                "id": "lvvuv9zr",
+                "auto": false
+              },
+              {
+                "type": "instruction",
+                "text": "tries = tries + 1",
+                "id": "al8uicsn",
+                "auto": false
+              },
+              {
+                "type": "if",
+                "text": "guess < secret",
+                "yes": [
+                  {
+                    "type": "instruction",
+                    "text": "print(\"higher\")",
+                    "id": "gto4uhdv",
+                    "auto": false
+                  }
+                ],
+                "no": [
+                  {
+                    "type": "if",
+                    "text": "guess > secret",
+                    "yes": [
+                      {
+                        "type": "instruction",
+                        "text": "print(\"lower\")",
+                        "id": "3nh2bmxn",
+                        "auto": false
+                      }
+                    ],
+                    "no": [],
+                    "id": "u3wddd29",
+                    "auto": false
+                  }
+                ],
+                "id": "nm2jv5zo",
+                "auto": false
+              }
+            ],
+            "id": "z5e1npes",
+            "auto": false
+          },
+          {
+            "type": "instruction",
+            "text": "print(\"Correct after \" + tries + \" tries\")",
+            "id": "ls7grixy",
+            "auto": false
+          }
+        ]
+      }
+    ]
+  }
+}

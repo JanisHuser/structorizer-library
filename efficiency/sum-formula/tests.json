@@ -1,0 +1,49 @@
+{
+  "tests": [
+    {
+      "input": [
+        "5"
+      ],
+      "output": "15"
+    },
+    {
+      "input": [
+        "100"
+      ],
+      "output": "5050"
+    },
+    {
+      "input": [
+        "0"
+      ],
+      "output": "0",
+      "hidden": true
+    },
+    {
+      "input": [
+        "1"
+      ],
+      "output": "1",
+      "hidden": true
+    },
+    {
+      "input": [
+        "2024"
+      ],
+      "output": "2049300",
+      "hidden": true
+    }
+  ],
+  "complexity": {
+    "input": [
+      "{n}"
+    ],
+    "sizes": [
+      16,
+      64,
+      256,
+      1024
+    ],
+    "max": "O(1)"
+  }
+}

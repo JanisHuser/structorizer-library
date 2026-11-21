@@ -1,0 +1,28 @@
+{
+  "app": "structorizer",
+  "version": 2,
+  "project": {
+    "title": "A function: maximum(a, b)",
+    "auto": false,
+    "active": 0,
+    "diagrams": [
+      {
+        "name": "Main",
+        "auto": false,
+        "body": [
+          {
+            "type": "instruction",
+            "text": "print(maximum(4, 9))",
+            "id": "gccpf2pb",
+            "auto": false
+          }
+        ]
+      },
+      {
+        "name": "maximum(a, b)",
+        "auto": false,
+        "body": []
+      }
+    ]
+  }
+}

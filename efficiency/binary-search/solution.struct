@@ -1,0 +1,93 @@
+{
+  "app": "structorizer",
+  "version": 2,
+  "project": {
+    "title": "Binary search",
+    "auto": false,
+    "active": 0,
+    "diagrams": [
+      {
+        "name": "Main",
+        "auto": false,
+        "body": [
+          {
+            "type": "instruction",
+            "text": "print(search([1, 3, 5, 7, 9], 7))",
+            "id": "vkr807x6",
+            "auto": false
+          }
+        ]
+      },
+      {
+        "name": "search(list, x)",
+        "auto": false,
+        "body": [
+          {
+            "type": "instruction",
+            "text": "lo = 0\nhi = len(list) - 1",
+            "id": "z1s4sn5s",
+            "auto": false
+          },
+          {
+            "type": "while",
+            "text": "lo <= hi",
+            "body": [
+              {
+                "type": "instruction",
+                "text": "mid = int((lo + hi) / 2)",
+                "id": "0q4ub9b0",
+                "auto": false
+              },
+              {
+                "type": "if",
+                "text": "list[mid] == x",
+                "yes": [
+                  {
+                    "type": "jump",
+                    "text": "return mid",
+                    "id": "ox2nob8g",
+                    "auto": false
+                  }
+                ],
+                "no": [
+                  {
+                    "type": "if",
+                    "text": "list[mid] < x",
+                    "yes": [
+                      {
+                        "type": "instruction",
+                        "text": "lo = mid + 1",
+                        "id": "vc5ipjq9",
+                        "auto": false
+                      }
+                    ],
+                    "no": [
+                      {
+                        "type": "instruction",
+                        "text": "hi = mid - 1",
+                        "id": "faffhwtc",
+                        "auto": false
+                      }
+                    ],
+                    "id": "5ovgu0qa",
+                    "auto": false
+                  }
+                ],
+                "id": "a55x7y57",
+                "auto": false
+              }
+            ],
+            "id": "g2ebcelu",
+            "auto": false
+          },
+          {
+            "type": "jump",
+            "text": "return -1",
+            "id": "1q4fr7nf",
+            "auto": false
+          }
+        ]
+      }
+    ]
+  }
+}

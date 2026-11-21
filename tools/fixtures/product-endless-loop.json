@@ -1,0 +1,41 @@
+{
+  "entry": "basics/product",
+  "fails": [
+    "tests",
+    "complexity"
+  ],
+  "error": "200000",
+  "note": "Never ends: stopped by the step limit.",
+  "project": {
+    "title": "x",
+    "diagrams": [
+      {
+        "name": "Main",
+        "body": [
+          {
+            "type": "instruction",
+            "text": "n = int(input(\"n = \"))"
+          },
+          {
+            "type": "instruction",
+            "text": "p = 1"
+          },
+          {
+            "type": "while",
+            "text": "true",
+            "body": [
+              {
+                "type": "instruction",
+                "text": "p = p * 2"
+              }
+            ]
+          },
+          {
+            "type": "instruction",
+            "text": "print(p)"
+          }
+        ]
+      }
+    ]
+  }
+}

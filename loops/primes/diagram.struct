@@ -1,0 +1,87 @@
+{
+  "app": "structorizer",
+  "version": 2,
+  "project": {
+    "title": "Prime numbers",
+    "auto": false,
+    "active": 0,
+    "diagrams": [
+      {
+        "name": "Main",
+        "auto": false,
+        "body": [
+          {
+            "type": "for",
+            "text": "n = 2 to 30",
+            "body": [
+              {
+                "type": "instruction",
+                "text": "prime = true",
+                "id": "cp7jdoeu",
+                "auto": false
+              },
+              {
+                "type": "instruction",
+                "text": "d = 2",
+                "id": "xtdgt18c",
+                "auto": false
+              },
+              {
+                "type": "while",
+                "text": "d * d <= n",
+                "body": [
+                  {
+                    "type": "if",
+                    "text": "n % d == 0",
+                    "yes": [
+                      {
+                        "type": "instruction",
+                        "text": "prime = false",
+                        "id": "xaiukysw",
+                        "auto": false
+                      },
+                      {
+                        "type": "jump",
+                        "text": "break",
+                        "id": "a1ggmagc",
+                        "auto": false
+                      }
+                    ],
+                    "no": [],
+                    "id": "zrhmm8rt",
+                    "auto": false
+                  },
+                  {
+                    "type": "instruction",
+                    "text": "d = d + 1",
+                    "id": "ic3zc26c",
+                    "auto": false
+                  }
+                ],
+                "id": "a3zo8p6u",
+                "auto": false
+              },
+              {
+                "type": "if",
+                "text": "prime",
+                "yes": [
+                  {
+                    "type": "instruction",
+                    "text": "print(n)",
+                    "id": "86e2okrd",
+                    "auto": false
+                  }
+                ],
+                "no": [],
+                "id": "ergfdpds",
+                "auto": false
+              }
+            ],
+            "id": "0ls1vpa0",
+            "auto": false
+          }
+        ]
+      }
+    ]
+  }
+}

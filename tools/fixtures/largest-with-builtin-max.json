@@ -1,0 +1,25 @@
+{
+  "entry": "decisions/largest",
+  "fails": [
+    "structure"
+  ],
+  "note": "Uses the built-in max instead of decisions.",
+  "project": {
+    "title": "x",
+    "diagrams": [
+      {
+        "name": "Main",
+        "body": [
+          {
+            "type": "instruction",
+            "text": "a = int(input())\nb = int(input())\nc = int(input())"
+          },
+          {
+            "type": "instruction",
+            "text": "print(max(a, max(b, c)))"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "app": "structorizer",
+  "version": 2,
+  "project": {
+    "title": "Product 1 to n",
+    "auto": false,
+    "active": 0,
+    "diagrams": [
+      {
+        "name": "Main",
+        "auto": false,
+        "body": [
+          {
+            "type": "instruction",
+            "text": "n = int(input(\"n = \"))",
+            "id": "bmqxf88f",
+            "auto": false
+          },
+          {
+            "type": "instruction",
+            "text": "p = 1",
+            "id": "yxgs9jaa",
+            "auto": false
+          },
+          {
+            "type": "for",
+            "text": "i = 1 to n",
+            "body": [
+              {
+                "type": "instruction",
+                "text": "p = p * i",
+                "id": "9ykp6whf",
+                "auto": false
+              }
+            ],
+            "id": "znv24ke7",
+            "auto": false
+          },
+          {
+            "type": "instruction",
+            "text": "print(p)",
+            "id": "pxlegpek",
+            "auto": false
+          }
+        ]
+      }
+    ]
+  }
+}

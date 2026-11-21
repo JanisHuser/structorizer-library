@@ -1,0 +1,69 @@
+{
+  "app": "structorizer",
+  "version": 2,
+  "project": {
+    "title": "Parallel tasks",
+    "auto": false,
+    "active": 0,
+    "diagrams": [
+      {
+        "name": "Main",
+        "auto": false,
+        "body": [
+          {
+            "type": "instruction",
+            "text": "print(\"Start\")",
+            "id": "aposuxr7",
+            "auto": false
+          },
+          {
+            "type": "parallel",
+            "text": "",
+            "threads": [
+              [
+                {
+                  "type": "for",
+                  "text": "a = 1 to 3",
+                  "body": [
+                    {
+                      "type": "instruction",
+                      "text": "print(\"A\" + a)",
+                      "id": "rwi66g26",
+                      "auto": false
+                    }
+                  ],
+                  "id": "qbv63ga5",
+                  "auto": false
+                }
+              ],
+              [
+                {
+                  "type": "for",
+                  "text": "b = 1 to 3",
+                  "body": [
+                    {
+                      "type": "instruction",
+                      "text": "print(\"B\" + b)",
+                      "id": "ojp9oac3",
+                      "auto": false
+                    }
+                  ],
+                  "id": "vbnan3uj",
+                  "auto": false
+                }
+              ]
+            ],
+            "id": "5rvgsbfr",
+            "auto": false
+          },
+          {
+            "type": "instruction",
+            "text": "print(\"Both done\")",
+            "id": "dcwaz7cg",
+            "auto": false
+          }
+        ]
+      }
+    ]
+  }
+}

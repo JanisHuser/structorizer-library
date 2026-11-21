@@ -1,0 +1,61 @@
+{
+  "app": "structorizer",
+  "version": 2,
+  "project": {
+    "title": "Greatest common divisor",
+    "auto": false,
+    "active": 0,
+    "diagrams": [
+      {
+        "name": "Main",
+        "auto": false,
+        "body": [
+          {
+            "type": "instruction",
+            "text": "a = 84",
+            "id": "z92l38yi",
+            "auto": false
+          },
+          {
+            "type": "instruction",
+            "text": "b = 36",
+            "id": "ee4pcpvq",
+            "auto": false
+          },
+          {
+            "type": "while",
+            "text": "b != 0",
+            "body": [
+              {
+                "type": "instruction",
+                "text": "t = b",
+                "id": "9xmu5xbq",
+                "auto": false
+              },
+              {
+                "type": "instruction",
+                "text": "b = a % b",
+                "id": "fud4xpfo",
+                "auto": false
+              },
+              {
+                "type": "instruction",
+                "text": "a = t",
+                "id": "72lf5h4x",
+                "auto": false
+              }
+            ],
+            "id": "4ldwhvwu",
+            "auto": false
+          },
+          {
+            "type": "instruction",
+            "text": "print(\"GCD: \" + a)",
+            "id": "4gk1rhj3",
+            "auto": false
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "entry": "efficiency/sum-formula",
+  "fails": [
+    "complexity"
+  ],
+  "measured": "O(n)",
+  "note": "Correct result, but a loop: O(n) instead of O(1).",
+  "project": {
+    "title": "x",
+    "diagrams": [
+      {
+        "name": "Main",
+        "body": [
+          {
+            "type": "instruction",
+            "text": "n = int(input(\"n = \"))"
+          },
+          {
+            "type": "instruction",
+            "text": "s = 0"
+          },
+          {
+            "type": "for",
+            "text": "i = 1 to n",
+            "body": [
+              {
+                "type": "instruction",
+                "text": "s = s + i"
+              }
+            ]
+          },
+          {
+            "type": "instruction",
+            "text": "print(s)"
+          }
+        ]
+      }
+    ]
+  }
+}

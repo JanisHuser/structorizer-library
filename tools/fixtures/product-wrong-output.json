@@ -1,0 +1,39 @@
+{
+  "entry": "basics/product",
+  "fails": [
+    "tests"
+  ],
+  "note": "Prints a label as well as the result.",
+  "project": {
+    "title": "x",
+    "diagrams": [
+      {
+        "name": "Main",
+        "body": [
+          {
+            "type": "instruction",
+            "text": "n = int(input(\"n = \"))"
+          },
+          {
+            "type": "instruction",
+            "text": "p = 1"
+          },
+          {
+            "type": "for",
+            "text": "i = 1 to n",
+            "body": [
+              {
+                "type": "instruction",
+                "text": "p = p * i"
+              }
+            ]
+          },
+          {
+            "type": "instruction",
+            "text": "print(\"Product: \" + p)"
+          }
+        ]
+      }
+    ]
+  }
+}

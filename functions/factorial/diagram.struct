@@ -1,0 +1,65 @@
+{
+  "app": "structorizer",
+  "version": 2,
+  "project": {
+    "title": "Factorial (recursion)",
+    "auto": false,
+    "active": 0,
+    "diagrams": [
+      {
+        "name": "Main",
+        "auto": false,
+        "body": [
+          {
+            "type": "for",
+            "text": "n = 1 to 6",
+            "body": [
+              {
+                "type": "call",
+                "text": "f = fact(n)",
+                "id": "9s4tvzyj",
+                "auto": false
+              },
+              {
+                "type": "instruction",
+                "text": "print(n + \"! = \" + f)",
+                "id": "ff1wyrzo",
+                "auto": false
+              }
+            ],
+            "id": "1utwedct",
+            "auto": false
+          }
+        ]
+      },
+      {
+        "name": "fact(k)",
+        "auto": false,
+        "body": [
+          {
+            "type": "if",
+            "text": "k <= 1",
+            "yes": [
+              {
+                "type": "jump",
+                "text": "return 1",
+                "id": "pencbul5",
+                "auto": false
+              }
+            ],
+            "no": [
+              {
+                "type": "jump",
+                "text": "return k * fact(k - 1)",
+                "id": "pj6q0oz7",
+                "auto": false
+              }
+            ],
+            "id": "3coe1puj",
+            "auto": false
+          }
+        ]
+      }
+    ]
+  }
+}

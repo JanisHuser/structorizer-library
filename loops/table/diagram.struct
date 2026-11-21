@@ -1,0 +1,45 @@
+{
+  "app": "structorizer",
+  "version": 2,
+  "project": {
+    "title": "Times table",
+    "auto": false,
+    "active": 0,
+    "diagrams": [
+      {
+        "name": "Main",
+        "auto": false,
+        "body": [
+          {
+            "type": "for",
+            "text": "i = 1 to 5",
+            "body": [
+              {
+                "type": "for",
+                "text": "j = 1 to 5",
+                "body": [
+                  {
+                    "type": "instruction",
+                    "text": "System.out.printf(\"%4d\", i * j)",
+                    "id": "vrd1vh84",
+                    "auto": false
+                  }
+                ],
+                "id": "182u9imv",
+                "auto": false
+              },
+              {
+                "type": "instruction",
+                "text": "System.out.println()",
+                "id": "re3t1wit",
+                "auto": false
+              }
+            ],
+            "id": "3gwb0vfb",
+            "auto": false
+          }
+        ]
+      }
+    ]
+  }
+}

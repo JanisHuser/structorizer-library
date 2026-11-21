@@ -1,0 +1,46 @@
+{
+  "tests": [
+    {
+      "call": "search([1, 3, 5, 7, 9], 7)",
+      "returns": 3
+    },
+    {
+      "call": "search([1, 3, 5, 7, 9], 1)",
+      "returns": 0
+    },
+    {
+      "call": "search([2, 4, 6], 5)",
+      "returns": -1
+    },
+    {
+      "call": "search([], 3)",
+      "returns": -1,
+      "hidden": true
+    },
+    {
+      "call": "search(range(0, 100), 99)",
+      "returns": 99,
+      "hidden": true
+    },
+    {
+      "call": "search(range(0, 100, 2), 64)",
+      "returns": 32,
+      "hidden": true
+    }
+  ],
+  "complexity": {
+    "call": "search(range(0, {n}), {n} - 1)",
+    "sizes": [
+      64,
+      256,
+      1024,
+      4096
+    ],
+    "max": "O(log n)"
+  },
+  "structure": {
+    "functions": [
+      "search(list, x)"
+    ]
+  }
+}

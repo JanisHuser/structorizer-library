@@ -1,0 +1,28 @@
+{
+  "app": "structorizer",
+  "version": 2,
+  "project": {
+    "title": "Binary search",
+    "auto": false,
+    "active": 0,
+    "diagrams": [
+      {
+        "name": "Main",
+        "auto": false,
+        "body": [
+          {
+            "type": "instruction",
+            "text": "print(search([1, 3, 5, 7, 9], 7))",
+            "id": "qpgvz9cc",
+            "auto": false
+          }
+        ]
+      },
+      {
+        "name": "search(list, x)",
+        "auto": false,
+        "body": []
+      }
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+name: Check library
+on:
+  push:
+  pull_request:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: JanisHuser/Structorizer
+          path: .app
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      # runs every example, grades every model solution and the wrong solutions in tools/fixtures,
+      # and fails if README.md (the generated catalogue) is out of date
+      - run: node tools/check.js --app .app
+      - run: git diff --exit-code README.md

@@ -1,0 +1,51 @@
+{
+  "app": "structorizer",
+  "version": 2,
+  "project": {
+    "title": "A function: maximum(a, b)",
+    "auto": false,
+    "active": 0,
+    "diagrams": [
+      {
+        "name": "Main",
+        "auto": false,
+        "body": [
+          {
+            "type": "instruction",
+            "text": "print(maximum(4, 9))",
+            "id": "cddf5o8l",
+            "auto": false
+          }
+        ]
+      },
+      {
+        "name": "maximum(a, b)",
+        "auto": false,
+        "body": [
+          {
+            "type": "if",
+            "text": "a >= b",
+            "yes": [
+              {
+                "type": "jump",
+                "text": "return a",
+                "id": "fechorq0",
+                "auto": false
+              }
+            ],
+            "no": [
+              {
+                "type": "jump",
+                "text": "return b",
+                "id": "2ibsda6r",
+                "auto": false
+              }
+            ],
+            "id": "td6awpjn",
+            "auto": false
+          }
+        ]
+      }
+    ]
+  }
+}

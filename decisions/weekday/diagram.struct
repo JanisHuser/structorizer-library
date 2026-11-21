@@ -1,0 +1,75 @@
+{
+  "app": "structorizer",
+  "version": 2,
+  "project": {
+    "title": "Day of the week",
+    "auto": false,
+    "active": 0,
+    "diagrams": [
+      {
+        "name": "Main",
+        "auto": false,
+        "body": [
+          {
+            "type": "instruction",
+            "text": "day = int(input(\"Day (1-7): \"))",
+            "id": "fis0o35a",
+            "auto": false
+          },
+          {
+            "type": "switch",
+            "text": "day",
+            "cases": [
+              {
+                "label": "1, 2, 3, 4",
+                "body": [
+                  {
+                    "type": "instruction",
+                    "text": "print(\"Working day\")",
+                    "id": "1048ev5a",
+                    "auto": false
+                  }
+                ]
+              },
+              {
+                "label": "5",
+                "body": [
+                  {
+                    "type": "instruction",
+                    "text": "print(\"Almost weekend\")",
+                    "id": "9v5brmsq",
+                    "auto": false
+                  }
+                ]
+              },
+              {
+                "label": "6, 7",
+                "body": [
+                  {
+                    "type": "instruction",
+                    "text": "print(\"Weekend!\")",
+                    "id": "72mooui8",
+                    "auto": false
+                  }
+                ]
+              },
+              {
+                "label": "default",
+                "body": [
+                  {
+                    "type": "instruction",
+                    "text": "print(\"No such day\")",
+                    "id": "28wbjp3r",
+                    "auto": false
+                  }
+                ]
+              }
+            ],
+            "id": "fxl3ylbp",
+            "auto": false
+          }
+        ]
+      }
+    ]
+  }
+}

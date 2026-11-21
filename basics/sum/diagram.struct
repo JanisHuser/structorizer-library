@@ -1,0 +1,49 @@
+{
+  "app": "structorizer",
+  "version": 2,
+  "project": {
+    "title": "Sum 1 to n",
+    "auto": false,
+    "active": 0,
+    "diagrams": [
+      {
+        "name": "Main",
+        "auto": false,
+        "body": [
+          {
+            "type": "instruction",
+            "text": "n = int(input(\"n = \"))",
+            "id": "hgeixhsk",
+            "auto": false
+          },
+          {
+            "type": "instruction",
+            "text": "sum = 0",
+            "id": "rngwyzk5",
+            "auto": false
+          },
+          {
+            "type": "for",
+            "text": "i = 1 to n",
+            "body": [
+              {
+                "type": "instruction",
+                "text": "sum = sum + i",
+                "id": "sm4gwuax",
+                "auto": false
+              }
+            ],
+            "id": "t6a5iqy5",
+            "auto": false
+          },
+          {
+            "type": "instruction",
+            "text": "print(\"Sum: \" + sum)",
+            "id": "g9durm8a",
+            "auto": false
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "format": 1,
+  "id": "structorizer-library",
+  "title": {
+    "en": "Structorizer Library",
+    "de": "Structorizer-Bibliothek",
+    "fr": "Bibliothèque Structorizer",
+    "it": "Biblioteca Structorizer"
+  },
+  "chapters": [
+    {
+      "id": "basics",
+      "title": {
+        "en": "Basics",
+        "de": "Grundlagen",
+        "fr": "Bases",
+        "it": "Basi"
+      },
+      "entries": [
+        "basics/sum",
+        "basics/product"
+      ]
+    },
+    {
+      "id": "loops",
+      "title": {
+        "en": "Loops",
+        "de": "Schleifen",
+        "fr": "Boucles",
+        "it": "Cicli"
+      },
+      "entries": [
+        "loops/gcd",
+        "loops/table",
+        "loops/primes"
+      ]
+    },
+    {
+      "id": "decisions",
+      "title": {
+        "en": "Decisions",
+        "de": "Verzweigungen",
+        "fr": "Conditions",
+        "it": "Decisioni"
+      },
+      "entries": [
+        "decisions/weekday",
+        "decisions/guess",
+        "decisions/largest"
+      ]
+    },
+    {
+      "id": "functions",
+      "title": {
+        "en": "Functions",
+        "de": "Funktionen",
+        "fr": "Fonctions",
+        "it": "Funzioni"
+      },
+      "entries": [
+        "functions/factorial",
+        "functions/maximum"
+      ]
+    },
+    {
+      "id": "efficiency",
+      "title": {
+        "en": "Efficiency",
+        "de": "Effizienz",
+        "fr": "Efficacité",
+        "it": "Efficienza"
+      },
+      "entries": [
+        "efficiency/sum-formula",
+        "efficiency/binary-search"
+      ]
+    },
+    {
+      "id": "parallel",
+      "title": {
+        "en": "Parallel",
+        "de": "Parallel",
+        "fr": "Parallèle",
+        "it": "Parallelo"
+      },
+      "entries": [
+        "parallel/parallel"
+      ]
+    }
+  ],
+  "includes": [],
+  "submissions": null
+}

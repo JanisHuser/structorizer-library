@@ -1,0 +1,34 @@
+{
+  "tests": [
+    {
+      "call": "maximum(3, 5)",
+      "returns": 5
+    },
+    {
+      "call": "maximum(9, 2)",
+      "returns": 9
+    },
+    {
+      "call": "maximum(2.5, 2)",
+      "returns": 2.5
+    },
+    {
+      "call": "maximum(-1, -1)",
+      "returns": -1,
+      "hidden": true
+    },
+    {
+      "call": "maximum(-7, -3)",
+      "returns": -3,
+      "hidden": true
+    }
+  ],
+  "structure": {
+    "functions": [
+      "maximum(a, b)"
+    ],
+    "requires": [
+      "if"
+    ]
+  }
+}
